@@ -1,0 +1,3 @@
+#!/bin/bash -i
+
+for i in $(qstat | grep $RNA_USER | grep RNA | awk -F\. '{ print $1; }'); do qdel "$i"; done

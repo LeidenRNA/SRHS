@@ -1,0 +1,5 @@
+#!/bin/bash -i
+
+cd "$RNA_ROOT"
+ 
+./rna --frontend-server --frontend-port=$RNA_FRONTEND_PORT --backend-port=$RNA_DBE_PORT --backend-server=$RNA_DBE_SERVER --ds-server=$RNA_DS_SERVER --ds-port=$RNA_DS_PORT

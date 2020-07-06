@@ -1,0 +1,5 @@
+#! /usr/bin/env bash
+
+cd "$RNA_ROOT"
+
+stdbuf -oL ompi-server --no-daemonize --report-uri - | stdbuf -oL sed "s/tcp:\/\/127.0.0.1/tcp:\/\/$(hostname --ip-address)/" > ompi-server.uri

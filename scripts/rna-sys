@@ -1,0 +1,57 @@
+#!/bin/bash -i
+
+display_usage () {
+  echo
+  echo "Usage: $0"
+  echo
+  echo " -s, --start    Start RNA service"
+  echo " -t, --stop     Stop RNA service"
+  echo " -r, --restart  Restart RNA service"
+  echo
+}
+
+raise_error () {
+  local error_message="$@"
+  echo "${error_message}" 1>&2;
+}
+
+argument="$1"
+
+if [[ -z $argument ]] ; then
+  raise_error "expected argument to be present"
+  display_usage
+else
+  case $argument in
+    -s|--start)
+      b scheduler
+      sleep 5
+      b dispatch
+      sleep 5
+      b frontend
+      ;;
+    -t|--stop)
+      k frontend-server -HUP
+      k "-np 1 ./rna --dispatch" -SIGUSR1		# if dispatch runs under mpirun, need unique string id "-np 1 ./rna --dispatch" from process list
+      k scheduler -HUP
+      killrna > /dev/null 2>&1
+      rm -f ~/RNA.[eo]* 2>&1
+      ;;
+    -r|--restart)
+      k frontend-server -HUP
+      k "-np 1 ./rna --dispatch" -SIGUSR1		# if dispatch runs under mpirun, need unique string id "-np 1 ./rna --dispatch" from process list
+      k scheduler -HUP
+      killrna > /dev/null 2>&1
+      mv ~/RNA/*.log ~/RNA/backups/logs/
+      rm -f ~/RNA.[eo]* 2>&1
+      b scheduler
+      sleep 5
+      b dispatch
+      sleep 5
+      b frontend
+      ;;
+    *)
+      raise_error "unknown argument: ${argument}"
+      display_usage
+      ;;
+  esac
+fi

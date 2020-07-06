@@ -1,0 +1,27 @@
+#!/bin/bash -i
+
+echo "sending $2 to all '$1'" 
+
+this=`basename "$0"`	# this script's name
+
+function get_target_ps_list () {
+	# get all ps entry PIDs for matching names, excluding when process name (-l) is $this
+        pgrep -l -f -- $1 | grep -v $this | awk '{ print $1; }'
+}
+
+for j in $(get_target_ps_list $1); do kill $2 $j > /dev/null 2>&1; done
+
+num_procs=0
+for j in $(get_target_ps_list $1); do num_procs=$((num_procs+1)); done
+
+num_tries=30
+while [ $num_procs -gt 0 -a $num_tries -gt 0 ]
+do
+    sleep 1
+    num_procs=0
+    for j in $(get_target_ps_list $1); do num_procs=$((num_procs+1)); done
+    num_tries=$((num_tries-1))
+done
+
+# worst case after ~30seconds - force kill (if not already supplied as an option by the user)
+for j in $(get_target_ps_list $1); do kill -9 $j > /dev/null 2>&1; done

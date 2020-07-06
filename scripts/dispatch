@@ -1,0 +1,5 @@
+#!/bin/bash -i
+
+cd "$RNA_ROOT"
+
+mpirun --ompi-server file:"$RNA_ROOT"/ompi-server.uri -host localhost -np 1 ./rna --dispatch --backend-port=$RNA_DBE_PORT --ds-server="$RNA_DS_SERVER" --ds-port=$RNA_DS_PORT --si-server="$RNA_SI_SERVER" --si-port="$RNA_SI_PORT"

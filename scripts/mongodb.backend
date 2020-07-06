@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+
+cd "$MONGO_ROOT"bin/; nohup ./mongod --dbpath "$MONGO_ROOT"data/db --replSet rs0 &

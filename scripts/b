@@ -1,0 +1,5 @@
+#!/bin/bash -i
+
+echo "running $1 in background"
+dt=$(date +%d-%b-%H:%M:%S)
+nohup "$1" > "$RNA_ROOT/$1.$dt.log" 2>&1 </dev/null &

@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+
+scp -q $RNA_HEADNODE:$RNA_ROOT/ompi-server.uri $RNA_ROOT/ompi-server.uri

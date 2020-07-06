@@ -1,0 +1,5 @@
+#!/bin/bash -i
+
+cd "$RNA_ROOT"
+
+./rna --scheduler --si-port=$RNA_SI_PORT --headnode-server="$RNA_HEADNODE"

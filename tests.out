@@ -1,0 +1,689 @@
+    /*
+     * auto-generated test cases by /home/rna/RNA/scripts/gen_tests.py on 2020-01-03
+     */
+
+    /* test 1 */
+    strcpy (     ss[t], "<<<___>>>");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "gggaaaccc");
+    r=0;
+    results[t][r].fp_posn=1;  results[t][r++].tp_posn=7;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 2 */
+    strcpy (     ss[t], "<<<___>>>");
+    strcpy (pos_var[t], "1");
+    strcpy (    seq[t], "gggaaaccc");
+    r=0;
+    results[t][r].fp_posn=1;  results[t][r++].tp_posn=7;
+    results[t][r].fp_posn=2;  results[t][r++].tp_posn=7;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 3 */
+    strcpy (     ss[t], "<<-<___>>>");
+    strcpy (pos_var[t], "1");
+    strcpy (    seq[t], "gggaaaccc");
+    r=0;
+    results[t][r].fp_posn=1;  results[t][r++].tp_posn=8;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 4 */
+    strcpy (     ss[t], "<<<___>->>");
+    strcpy (pos_var[t], "1");
+    strcpy (    seq[t], "gggaaaccc");
+    r=0;
+    results[t][r].fp_posn=2;  results[t][r++].tp_posn=9;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 5 */
+    strcpy (     ss[t], "<<-<___>>->");
+    strcpy (pos_var[t], "1 1      1");
+    strcpy (    seq[t], "gggaaaccc");
+    r=0;
+    results[t][r].fp_posn=1;  results[t][r++].tp_posn=9;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 6 */
+    strcpy (     ss[t], "<<-<___>>->::::<<<___>>>");
+    strcpy (pos_var[t], "1 1      1");
+    strcpy (    seq[t], "gggaaacccaaaagggaaaccc");
+    r=0;
+    results[t][r].fp_posn=1;  results[t][r++].tp_posn=9;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 7 */
+    strcpy (     ss[t], "<<-<___>>->:::::<<-<<____>>->>");
+    strcpy (pos_var[t], "1 1      1 1    1 1  2     1");
+    strcpy (    seq[t], "gggaaacccaaaagggaaaccc");
+    r=0;
+    results[t][r].fp_posn=1;  results[t][r++].tp_posn=9;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 8 */
+    strcpy (     ss[t], "<<-<___>>->:::::<<-<<____>>->>");
+    strcpy (pos_var[t], "1 1      1 1    1 1  2     1");
+    strcpy (    seq[t], "gggaaacccaaaagggaaaccc");
+    r=0;
+    results[t][r].fp_posn=1;  results[t][r++].tp_posn=9;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 9 */
+    strcpy (     ss[t], "<<-<___>>->:::::<<-<___>>->");
+    strcpy (pos_var[t], "1 1      1 1    1 1      1");
+    strcpy (    seq[t], "gggaaacccaaaagggaaaccc");
+    r=0;
+    results[t][r].fp_posn=1;  results[t][r++].tp_posn=9;
+    results[t][r].fp_posn=1;  results[t][r++].tp_posn=9;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 10 */
+    strcpy (     ss[t], "((,,<<_____>>))");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "ccccccggggagggg");
+    r=0;
+    results[t][r].fp_posn=1;  results[t][r++].tp_posn=14;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 11 */
+    strcpy (     ss[t], "((((,,,<<<<___>>>>,,,<<<___>>>,,))))");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "ccccgggaaaaaaauuuuaaagggaaacccaagggg");
+    r=0;
+    results[t][r].fp_posn=1;  results[t][r++].tp_posn=33;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 12 */
+    strcpy (     ss[t], "((((,,,<<-<<___>>>>,,,<<<___>>>,,))-))");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "ccccgggaacaaaaauuuuaaagggaaacccaaggugg");
+    r=0;
+    results[t][r].fp_posn=1;  results[t][r++].tp_posn=37;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 13 */
+    strcpy (     ss[t], "((((,,,,))))");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "ccccaaaagggg");
+    r=0;
+    results[t][r].fp_posn=1;  results[t][r++].tp_posn=9;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 14 */
+    strcpy (     ss[t], "((,,,,))");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "ccccaaaagggg");
+    r=0;
+    results[t][r].fp_posn=3;  results[t][r++].tp_posn=9;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 15 */
+    strcpy (     ss[t], "((((,,,<<-<<___>>>>,,,<<<___>>>,,<<<___>>>))-))");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "ccccgggaacaaaaauuuuaaagggaaacccaacccaaagggggugg");
+    r=0;
+    results[t][r].fp_posn=1;  results[t][r++].tp_posn=46;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 16 */
+    strcpy (     ss[t], "(((,,,,)))");
+    strcpy (pos_var[t], "1");
+    strcpy (    seq[t], "ccccaaaagggg");
+    r=0;
+    results[t][r].fp_posn=2;  results[t][r++].tp_posn=9;
+    results[t][r].fp_posn=3;  results[t][r++].tp_posn=9;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 17 */
+    strcpy (     ss[t], "((,,,,,))");
+    strcpy (pos_var[t], "  1");
+    strcpy (    seq[t], "ccccaaaagggg");
+    r=0;
+    results[t][r].fp_posn=2;  results[t][r++].tp_posn=9;
+    results[t][r].fp_posn=3;  results[t][r++].tp_posn=9;
+    results[t][r].fp_posn=3;  results[t][r++].tp_posn=10;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 18 */
+    strcpy (     ss[t], "((,,,,,))");
+    strcpy (pos_var[t], "1 1");
+    strcpy (    seq[t], "ccccaaaagggg");
+    r=0;
+    results[t][r].fp_posn=2;  results[t][r++].tp_posn=9;
+    results[t][r].fp_posn=3;  results[t][r++].tp_posn=9;
+    results[t][r].fp_posn=3;  results[t][r++].tp_posn=9;
+    results[t][r].fp_posn=3;  results[t][r++].tp_posn=10;
+    results[t][r].fp_posn=4;  results[t][r++].tp_posn=9;
+    results[t][r].fp_posn=4;  results[t][r++].tp_posn=10;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 19 */
+    strcpy (     ss[t], "((-(<<_____>>)))");
+    strcpy (pos_var[t], "1");
+    strcpy (    seq[t], "ccccccggggagggg");
+    r=0;
+    results[t][r].fp_posn=2;  results[t][r++].tp_posn=15;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 20 */
+    strcpy (     ss[t], "((<<______>><<_____>>))");
+    strcpy (pos_var[t], "    1");
+    strcpy (    seq[t], "ccccccaaaggggaacccccgg");
+    r=0;
+    results[t][r].fp_posn=1;  results[t][r++].tp_posn=21;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 21 */
+    strcpy (     ss[t], "((<<_____>><<_____>>))");
+    strcpy (pos_var[t], "2   1      2 1");
+    strcpy (    seq[t], "ccccccaaaggggaacccccgg");
+    r=0;
+    results[t][r].fp_posn=1;  results[t][r++].tp_posn=21;
+    results[t][r].fp_posn=2;  results[t][r++].tp_posn=21;
+    results[t][r].fp_posn=2;  results[t][r++].tp_posn=21;
+    results[t][r].fp_posn=3;  results[t][r++].tp_posn=21;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 22 */
+    strcpy (     ss[t], "((((,,,<<--<<____>>>>,,,,<<<___>>>,,<<<<___>>>>))--))");
+    strcpy (pos_var[t], "1   1  1 1   1       1              1            1");
+    strcpy (    seq[t], "ccccgggaacaaaaauuuuaaagggaaacccaacccaaagggggugg");
+    r=0;
+    results[t][r].fp_posn=1;  results[t][r++].tp_posn=46;
+    results[t][r].fp_posn=1;  results[t][r++].tp_posn=47;
+    results[t][r].fp_posn=1;  results[t][r++].tp_posn=46;
+    results[t][r].fp_posn=2;  results[t][r++].tp_posn=46;
+    results[t][r].fp_posn=2;  results[t][r++].tp_posn=47;
+    results[t][r].fp_posn=1;  results[t][r++].tp_posn=46;
+    results[t][r].fp_posn=2;  results[t][r++].tp_posn=46;
+    results[t][r].fp_posn=2;  results[t][r++].tp_posn=47;
+    results[t][r].fp_posn=1;  results[t][r++].tp_posn=46;
+    results[t][r].fp_posn=2;  results[t][r++].tp_posn=46;
+    results[t][r].fp_posn=2;  results[t][r++].tp_posn=47;
+    results[t][r].fp_posn=1;  results[t][r++].tp_posn=46;
+    results[t][r].fp_posn=2;  results[t][r++].tp_posn=46;
+    results[t][r].fp_posn=2;  results[t][r++].tp_posn=47;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 23 */
+    strcpy (     ss[t], "<<<_[[[_>>>:::]]]");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "gggagggacccaaaccc");
+    r=0;
+    results[t][r].fp_posn=1;  results[t][r++].tp_posn=9;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 24 */
+    strcpy (     ss[t], "<<<_[[[[_>>>::::]]]]");
+    strcpy (pos_var[t], "1   2       1");
+    strcpy (    seq[t], "gggagggacccaaaccc");
+    r=0;
+    results[t][r].fp_posn=1;  results[t][r++].tp_posn=9;
+    results[t][r].fp_posn=2;  results[t][r++].tp_posn=9;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 25 */
+    strcpy (     ss[t], "{{{:::<<<_[[[_}}}_>>>:::]]]");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "gggaaagggagggacccacccaaaccc");
+    r=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 26 */
+    strcpy (     ss[t], "{{{:::<<<_[[[_}}}_>>>:::]]]::::<<<___>>>");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "gggaaagggagggacccacccaaacccaaaagggaaaccc");
+    r=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 27 */
+    strcpy (     ss[t], "{{{:::<<<_____}}}_>>>:::[[[::::<<<]]]>>>");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "gggaaagggagggacccacccaaacccaaaaggggggccc");
+    r=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 28 */
+    strcpy (     ss[t], "{{{:::<<<_____}}}_>>>:::::::<<<[[[>>>:]]]");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "gggaaagggagggacccacccaaaaaaaggggggcccaccc");
+    r=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 29 */
+    strcpy (     ss[t], "[[[{{{:::<<<_____}}}_>>>:::]]]::::<<<___>>>");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "ggggggaaagggagggacccacccaaacccaaaaggggggccc");
+    r=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 30 */
+    strcpy (     ss[t], "[[[{{{:::<<<_____}}}_>>>:::::::<<<___>>>]]]");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "ggggggaaagggagggacccacccaaaaaaaggggggcccuuu");
+    r=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 31 */
+    strcpy (     ss[t], "[[[:::<<<______>>>:::{{{::::<<<__}}}_>>>]]]");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "gggaaagggagggaacccaaagggaaaagggggcccucccuuu");
+    r=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 32 */
+    strcpy (     ss[t], "[[[{{{:::<<<______>>>::}}}::<<<___>>>]]]");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "ggggggaaagggagggaacccaacccaaggggggcccuuu");
+    r=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 33 */
+    strcpy (     ss[t], "[[[{{{:::<<<______>>>::::<<<___>>>}}}]]]");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "ggggggaaagggagggaacccaaaaggggggccccccuuu");
+    r=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 34 */
+    strcpy (     ss[t], "[[[:::<<<_{{{__>>>::::<<<__]]]_>>>}}}");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "gggaaagggagggaacccaaaagggggcccgcccccc");
+    r=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 35 */
+    strcpy (     ss[t], "<<<{{{__>>>}}}");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "gggggguucccccc");
+    r=0;
+    results[t][r].fp_posn=1;  results[t][r++].tp_posn=9;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 36 */
+    strcpy (     ss[t], "<<<__{{{>>>}}}");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "ggguugggcccccc");
+    r=0;
+    results[t][r].fp_posn=1;  results[t][r++].tp_posn=9;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 37 */
+    strcpy (     ss[t], "<<<{{{<____>>>>}}}");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "gggggggaaaaccccccc");
+    r=0;
+    results[t][r].fp_posn=1;  results[t][r++].tp_posn=13;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 38 */
+    strcpy (     ss[t], "<<<{{{<____>>>}}}>");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "gggggggaaaaccccccc");
+    r=0;
+    results[t][r].fp_posn=1;  results[t][r++].tp_posn=18;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 39 */
+    strcpy (     ss[t], "<<[[[<{{{<____>>>]]]>:::}}}");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "ggggggggggaaaacccccccaaaccc");
+    r=0;
+    results[t][r].fp_posn=1;  results[t][r++].tp_posn=21;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 40 */
+    strcpy (     ss[t], "{{{<<[[[<}}}<____>>>]]]>");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "cccggggggggggaaaaccccccc");
+    r=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 41 */
+    strcpy (     ss[t], "{{{<<[[[<}}}<____>>>>:::<<<___>>]]]>");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "cccggggggggggaaaaccccaaagggaaacccccc");
+    r=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 42 */
+    strcpy (     ss[t], "(((,{{{<<[[[<}}}<____>>>>,,,<<<___>>]]]>,)))");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "gggacccggggggggggaaaaccccaaagggaaaccccccaccc");
+    r=0;
+    results[t][r].fp_posn=1;  results[t][r++].tp_posn=42;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 43 */
+    strcpy (     ss[t], "<~<<___>>~>.");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "gcggaaaccgcc");
+    r=0;
+    results[t][r].fp_posn=1;  results[t][r++].tp_posn=11;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 44 */
+    strcpy (     ss[t], "<~<<___>>~>:::.");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "gcggaaaccgcaaac");
+    r=0;
+    results[t][r].fp_posn=1;  results[t][r++].tp_posn=11;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 45 */
+    strcpy (     ss[t], "(~((<<<___>>>))~):::.");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "gcgggggaaacccccgcaaac");
+    r=0;
+    results[t][r].fp_posn=1;  results[t][r++].tp_posn=17;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 46 */
+    strcpy (     ss[t], ".:::<~<<___>>~>");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "caaaggggaaacccc");
+    r=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 47 */
+    strcpy (     ss[t], ".::[[:<~<<___>>~>]]");
+    strcpy (pos_var[t], " 1");
+    strcpy (    seq[t], "caaggaggggaaacccccc");
+    r=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 48 */
+    strcpy (     ss[t], ".:::((~<<___>>~))");
+    strcpy (pos_var[t], " 1  1  1");
+    strcpy (    seq[t], "caagggggaaaccccc");
+    r=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 49 */
+    strcpy (     ss[t], ".::((~<<<___>>>~,))");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "caaggggggaaaccccacc");
+    r=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 50 */
+    strcpy (     ss[t], ".::((~<<<___>>>~,<<<___>>>))");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "caaggggggaaaccccagggaaaccccc");
+    r=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 51 */
+    strcpy (     ss[t], ".::((<<<-<~<___>~>->>>,))");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "caagggggggggaaacccccccacc");
+    r=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 52 */
+    strcpy (     ss[t], ".::((<<<-~<___>~->>>,))");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "caagggggaggaaaccacccacc");
+    r=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 53 */
+    strcpy (     ss[t], ".::((<<<-~-<___>-~->>>,))");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "caagggggagagaaacacacccacc");
+    r=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 54 */
+    strcpy (     ss[t], ".::(~(<<<--<___>-->>>,)~)");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "caaggggggaagaaacaacccaccc");
+    r=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 55 */
+    strcpy (     ss[t], ".::~((<<<--<___>-->>>,))~");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "caaggggggaagaaacaacccaccc");
+    r=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 56 */
+    strcpy (     ss[t], ".::((~<<<--<___>-->>>,<<<___>>>~))");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "caaggggggaagaaacaacccagggaaacccccc");
+    r=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 57 */
+    strcpy (     ss[t], ".::((~<<<--<___>-->>>,<<<___>>>,~,))");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "caaggggggaagaaacaacccagggaaacccacacc");
+    r=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 58 */
+    strcpy (     ss[t], ".::((~<<<--<___>-->>>,<<<___>>>,~,))");
+    strcpy (pos_var[t], " 1 1  2    2         11");
+    strcpy (    seq[t], "caaggggggaagaaacaacccagggaaacccacacc");
+    r=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 59 */
+    strcpy (     ss[t], ".::~:((,,<<<--<___>-->>>,<<<___>>>,,)):~");
+    strcpy (pos_var[t], "");
+    strcpy (    seq[t], "caagaggaagggaagaaacaacccagggaaacccaaccac");
+    r=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 60 */
+    strcpy (     ss[t], ".::[[:<~<<_{{__>>~>]]::<<___>>}}");
+    strcpy (pos_var[t], " 2 2       3         2 3 2 ");
+    strcpy (    seq[t], "caaggaggggaggaaccccccaaggaaacccc");
+    r=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 61 */
+    strcpy (     ss[t], ".::[[:((<~<<_{{__>>~>]],,<<___>>))}}");
+    strcpy (pos_var[t], " 2 2  4      3         2 3 2");
+    strcpy (    seq[t], "caaggaggggggaggaaccccccaaggaaacccccc");
+    r=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 62 */
+    strcpy (     ss[t], "[[:((<~<<_{{__>>~>]],,<<___>>))}}:::.:::<<<___>>>");
+    strcpy (pos_var[t], "2  4      3         2 3 2        1   3  2  1");
+    strcpy (    seq[t], "ggagggcggaggaaccgcccaaggaaaccccccaaacaaaggggaaacccc");
+    r=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+
+    /* test 63 */
+    strcpy (     ss[t], "[[:((~<<_{{__>>~]],,<<___>>))}}:::.:::<<<___>>>");
+    strcpy (pos_var[t], "2  4  3  3        2 3 2        1   3  2  1");
+    strcpy (    seq[t], "ggaggcgggaggaacccgccaaggaaaccccccaaacaaaggggaaacccc");
+    r=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    results[t][r].fp_posn=0;  results[t][r++].tp_posn=0;
+    num_results[t]=r;
+    assert (r<=MAX_NUM_RESULTS_PER_TEST);
+    t++;
+

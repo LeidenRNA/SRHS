@@ -1,0 +1,66 @@
+2. PRIVACY POLICY
+
+The Leiden Institute of Advanced Computer Science (hereafter, LIACS) is a member institute of Leiden Univeristy. This privacy policy will explain how our organization uses the personal data we collect from you when you use our website at https://rna.liacs.nl and its contained services (refer to Terms of Service above for service usage terms and conditions).
+
+Topics:
+
+a. What data do we collect?
+b. How do we collect your data?
+c. How will we use your data?
+d. How do we store your data?
+e. What are your data protection rights?
+f. Cookies
+g. How do we use Cookies?
+h. Privacy policies of other websites
+i. Changes to our privacy policy
+j. How to contact us
+k. How to contact the appropriate authorities
+
+
+a. What data do we collect?
+
+LIACS collects the following personal identification information a) a user name or email address, and b) a subscriber identification token, from registered users of its service at https://rna.liacs.nl (hereafter, "Service"). Authentication information is not processed directly by LIACS, but is handled by a 3rd party user authentication and authorization provider (auth0.com). No additional personal information is stored on LIACS systems for the purpose of provisioning its Service to you, as a registered user.
+
+b. How do we collect your data?
+You provide LIACS with the data we collect. We collect data and process data when you register for and access the Service, and use or view our website via your browser’s cookies. LIACS also receives your data indirectly from auth0.com (hereafter, "auth0").
+
+c. How will we use your data?
+LIACS collects your data so that we can manage your account and run queries submitted by you when using the Service. LIACS does not relay personal information to any 3rd party, except for auth0 and for the explicit purpose of rendering Service to you.
+
+d. How do we store your data?
+LIACS securely stores your data on its on-premise facilities. LIACS will keep your personal identification information for the duration of Service lifetime. Once this time period has expired, we will permantly delete your data.
+
+e. What are your data protection rights?
+LIACS would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following:
+
+The right to access – You have the right to request LIACS for copies of your personal data. We may charge you a small fee for this service.
+
+The right to rectification – You have the right to request that LIACS correct any information you believe is inaccurate. You also have the right to request LIACS to complete the information you believe is incomplete.
+
+The right to erasure – You have the right to request that LIACS erases your personal data, under certain conditions.
+
+The right to restrict processing – You have the right to request that LIACS restrict the processing of your personal data, under certain conditions.
+
+The right to object to processing – You have the right to object to LIACS processing of your personal data, under certain conditions.
+
+If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us at our email a.p.goultiaev@liacs.leidenuniv.nl
+
+f. Cookies
+Cookies are text files placed on your computer to collect standard Internet log information and visitor behavior information. When you visit our websites, we may collect information from you automatically through cookies or similar technology.
+
+For further information, visit allaboutcookies.org.
+
+g. How do we use cookies?
+LIACS uses cookies to improve your experience on our website, including the functionality to keep you signed in across browser sessions. You can set your browser not to accept cookies, and the above website tells you how to remove cookies from your browser. However, some of our website's functionality may not function properly as a result.
+
+h. Privacy policies of other websites
+The LIACS website contains links to other websites. Our privacy policy applies only to our website, so if you click on a link to another website, you should read their privacy policy.
+
+i. Changes to our privacy policy
+LIACS keeps its privacy policy under regular review and places any updates on this web page. This privacy policy was last updated on 29 Feburary 2020.
+
+j. How to contact us
+If you have any questions about LIACS privacy policy, the data we hold on you, or you would like to exercise one of your data protection rights, please do not hesitate to contact us at a.p.goultiaev@liacs.leidenuniv.nl
+
+k. How to contact the appropriate authority
+Should you wish to report a complaint or if you feel that LIACS has not addressed your concern in a satisfactory manner, you may contact the Information Commissioner’s Office.

@@ -1,0 +1,142 @@
+	<!-- decorate plot area -->
+	<g>
+		<g>
+			<!-- y-axis -->
+			<g>
+				<g>
+					<path d="M24.82 270L24.82 0" opacity="1" fill-opacity="0" stroke="#b6b6b6" stroke-width="1" stroke-opacity="0.2">
+					</path>
+				</g>
+			</g>
+
+			<!-- y-axis title -->
+                        <g>
+                                <text x="594.63" y="274.17" font-size="5" font-family="Open Sans" font-weight="normal" font-style="bold" letter-spacing="0" alignment-baseline="before-edge" transform="matrix(1 0 0 1 -572.0392222820236 -49.91022604951561)" style="line-height:100%" xml:space="preserve" dominant-baseline="text-before-edge" opacity="1" fill="#a0b4ce" fill-opacity="1"><tspan x="594.63" dy="0em" alignment-baseline="before-edge" dominant-baseline="text-before-edge" text-anchor="end">(kcal/mol)</tspan></text>
+                        </g>
+
+			<!-- y-axis labels -->
+			<g>
+				<text x="587.03" y="283.77" font-size="7" font-family="Open Sans" font-weight="normal" font-style="normal" letter-spacing="0" alignment-baseline="before-edge" transform="matrix(1 0 0 1 -572.0392222820236 -49.91022604951561)" style="line-height:100%" xml:space="preserve" dominant-baseline="text-before-edge" opacity="1" fill="#b0c4de" fill-opacity="1"><tspan x="587.03" dy="0em" alignment-baseline="before-edge" dominant-baseline="text-before-edge" text-anchor="end">0</tspan></text>
+			</g>
+			<g>
+				<text x="590.25" y="283.77" font-size="7" font-family="Open Sans" font-weight="normal" font-style="normal" letter-spacing="0" alignment-baseline="before-edge" transform="matrix(1 0 0 1 -575.0392222820236 -73.51022604951561)" style="line-height:100%" xml:space="preserve" dominant-baseline="text-before-edge" opacity="1" fill="#b0c4de" fill-opacity="1"><tspan x="590.25" dy="0em" alignment-baseline="before-edge" dominant-baseline="text-before-edge" text-anchor="end">-5</tspan></text>
+			</g>
+			<g>
+				<text x="595.97" y="283.77" font-size="7" font-family="Open Sans" font-weight="normal" font-style="normal" letter-spacing="0" alignment-baseline="before-edge" transform="matrix(1 0 0 1 -579.0392222820236 -96.91022604951561)" style="line-height:100%" xml:space="preserve" dominant-baseline="text-before-edge" opacity="1" fill="#b0c4de" fill-opacity="1"><tspan x="595.97" dy="0em" alignment-baseline="before-edge" dominant-baseline="text-before-edge" text-anchor="end">-10</tspan></text>
+			</g>
+			<g>
+				<text x="595.97" y="283.77" font-size="7" font-family="Open Sans" font-weight="normal" font-style="normal" letter-spacing="0" alignment-baseline="before-edge" transform="matrix(1 0 0 1 -579.0392222820236 -119.71022604951561)" style="line-height:100%" xml:space="preserve" dominant-baseline="text-before-edge" opacity="1" fill="#b0c4de" fill-opacity="1"><tspan x="595.97" dy="0em" alignment-baseline="before-edge" dominant-baseline="text-before-edge" text-anchor="end">-15</tspan></text>
+			</g>
+			<g>
+				<text x="595.97" y="283.77" font-size="7" font-family="Open Sans" font-weight="normal" font-style="normal" letter-spacing="0" alignment-baseline="before-edge" transform="matrix(1 0 0 1 -579.0392222820236 -143.5102260495156)" style="line-height:100%" xml:space="preserve" dominant-baseline="text-before-edge" opacity="1" fill="#b0c4de" fill-opacity="1"><tspan x="595.97" dy="0em" alignment-baseline="before-edge" dominant-baseline="text-before-edge" text-anchor="end">-20</tspan></text>
+			</g>
+			<g>
+				<text x="595.97" y="283.77" font-size="7" font-family="Open Sans" font-weight="normal" font-style="normal" letter-spacing="0" alignment-baseline="before-edge" transform="matrix(1 0 0 1 -579.0392222820236 -166.5102260495156)" style="line-height:100%" xml:space="preserve" dominant-baseline="text-before-edge" opacity="1" fill="#b0c4de" fill-opacity="1"><tspan x="595.97" dy="0em" alignment-baseline="before-edge" dominant-baseline="text-before-edge" text-anchor="end">-25</tspan></text>
+			</g>
+			<g>
+				<text x="595.97" y="283.77" font-size="7" font-family="Open Sans" font-weight="normal" font-style="normal" letter-spacing="0" alignment-baseline="before-edge" transform="matrix(1 0 0 1 -579.0392222820236 -188.5102260495156)" style="line-height:100%" xml:space="preserve" dominant-baseline="text-before-edge" opacity="1" fill="#b0c4de" fill-opacity="1"><tspan x="595.97" dy="0em" alignment-baseline="before-edge" dominant-baseline="text-before-edge" text-anchor="end">-30</tspan></text>
+			</g>
+			<g>
+				<text x="595.97" y="283.77" font-size="7" font-family="Open Sans" font-weight="normal" font-style="normal" letter-spacing="0" alignment-baseline="before-edge" transform="matrix(1 0 0 1 -579.0392222820236 -212.2102260495156)" style="line-height:100%" xml:space="preserve" dominant-baseline="text-before-edge" opacity="1" fill="#b0c4de" fill-opacity="1"><tspan x="595.97" dy="0em" alignment-baseline="before-edge" dominant-baseline="text-before-edge" text-anchor="end">-35</tspan></text>
+			</g>
+			<g>
+				<text x="595.97" y="283.77" font-size="7" font-family="Open Sans" font-weight="normal" font-style="normal" letter-spacing="0" alignment-baseline="before-edge" transform="matrix(1 0 0 1 -579.0392222820236 -235.5102260495156)" style="line-height:100%" xml:space="preserve" dominant-baseline="text-before-edge" opacity="1" fill="#b0c4de" fill-opacity="1"><tspan x="595.97" dy="0em" alignment-baseline="before-edge" dominant-baseline="text-before-edge" text-anchor="end">-40</tspan></text>
+			</g>
+			<g>
+				<text x="595.97" y="283.77" font-size="7" font-family="Open Sans" font-weight="normal" font-style="normal" letter-spacing="0" alignment-baseline="before-edge" transform="matrix(1 0 0 1 -579.0392222820236 -258.5102260495156)" style="line-height:100%" xml:space="preserve" dominant-baseline="text-before-edge" opacity="1" fill="#b0c4de" fill-opacity="1"><tspan x="595.97" dy="0em" alignment-baseline="before-edge" dominant-baseline="text-before-edge" text-anchor="end">-45</tspan></text>
+			</g>
+			<g>
+				<text x="595.97" y="283.77" font-size="7" font-family="Open Sans" font-weight="normal" font-style="normal" letter-spacing="0" alignment-baseline="before-edge" transform="matrix(1 0 0 1 -579.0392222820236 -280.8502260495156)" style="line-height:100%" xml:space="preserve" dominant-baseline="text-before-edge" opacity="1" fill="#b0c4de" fill-opacity="1"><tspan x="595.97" dy="0em" alignment-baseline="before-edge" dominant-baseline="text-before-edge" text-anchor="end">-50</tspan></text>
+			</g>
+			<g>
+				<text x="587.03" y="283.77" font-size="7" font-family="Open Sans" font-weight="normal" font-style="normal" letter-spacing="0" alignment-baseline="before-edge" transform="matrix(1 0 0 1 -572.0392222820236 -27.11022604951561)" style="line-height:100%" xml:space="preserve" dominant-baseline="text-before-edge" opacity="1" fill="#b0c4de" fill-opacity="1"><tspan x="587.03" dy="0em" alignment-baseline="before-edge" dominant-baseline="text-before-edge" text-anchor="end">5</tspan></text>
+			</g>
+
+			<!-- y-axis markers -->
+			<g>
+				<g>
+					<path d="M26.32 215.26L22.32 215.26" opacity="1" fill-opacity="0" stroke="#b6b6b6" stroke-width="1" stroke-opacity="0.2"></path>
+				</g>
+			</g>
+			<g>
+				<g>
+					<path d="M26.82 192.26L22.82 192.26" opacity="1" fill-opacity="0" stroke="#b6b6b6" stroke-width="1" stroke-opacity="0.2"></path>
+				</g>
+			</g>
+			<g>
+				<g>
+					<path d="M26.82 169.26L22.82 169.26" opacity="1" fill-opacity="0" stroke="#b6b6b6" stroke-width="1" stroke-opacity="0.2"></path>
+				</g>
+			</g>
+			<g>
+				<g>
+					<path d="M26.82 146.26L22.82 146.26" opacity="1" fill-opacity="0" stroke="#b6b6b6" stroke-width="1" stroke-opacity="0.2"></path>
+				</g>
+			</g>
+			<g>
+				<g>
+					<path d="M26.82 123.26L22.82 123.26" opacity="1" fill-opacity="0" stroke="#b6b6b6" stroke-width="1" stroke-opacity="0.2"></path>
+				</g>
+			</g>
+			<g>
+				<g>
+					<path d="M26.82 100.26L22.82 100.26" opacity="1" fill-opacity="0" stroke="#b6b6b6" stroke-width="1" stroke-opacity="0.2"></path>
+				</g>
+			</g>
+			<g>
+				<g>
+					<path d="M26.82 77.26L22.82 77.26" opacity="1" fill-opacity="0" stroke="#b6b6b6" stroke-width="1" stroke-opacity="0.2"></path>
+				</g>
+			</g>
+			<g>
+				<g>
+					<path d="M25.82 54.26L22.82 54.26" opacity="1" fill-opacity="0" stroke="#b6b6b6" stroke-width="1" stroke-opacity="0.2"></path>
+				</g>
+			</g>
+			<g>
+				<g>
+					<path d="M26.82 31.26L22.82 31.26" opacity="1" fill-opacity="0" stroke="#b6b6b6" stroke-width="1" stroke-opacity="0.2"></path>
+				</g>
+			</g>
+			<g>
+				<g>
+					<path d="M26.82 8.26L22.82 8.26" opacity="1" fill-opacity="0" stroke="#b6b6b6" stroke-width="1" stroke-opacity="0.2"></path>
+				</g>
+			</g>
+			<g>
+				<g> 	<!-- in the positive kcal/mol range -->
+					<path d="M26.82 262.26L22.82 262.26" opacity="1" fill-opacity="0" stroke="#b6b6b6" stroke-width="1" stroke-opacity="0.2"></path>
+				</g>
+			</g>
+
+			<!-- x-axis -->
+			<g>
+				<g>
+					<path d="M599.27 239.26L18.82 239.26" opacity="1" fill-opacity="0" stroke="#b6b6b6" stroke-width="1" stroke-opacity="0.2"></path>
+				</g>
+			</g>
+
+                        <!-- x-axis title -->
+                        <g>
+                                <text x="625.13" y="300.5" font-size="5" font-family="Open Sans" font-weight="normal" font-style="bold" letter-spacing="0" alignment-baseline="before-edge" transform="matrix(1 0 0 1 -572.0392222820236 -49.91022604951561)" style="line-height:100%" xml:space="preserve" dominant-baseline="text-before-edge" opacity="1" fill="#a0b4ce" fill-opacity="1"><tspan x="628.13" dy="0em" alignment-baseline="before-edge" dominant-baseline="text-before-edge" text-anchor="end">(nt position)</tspan></text>
+                        </g>
+
+			<!-- x-axis labels -->
+			<g>
+                                <text x="32.12" y="283.77" font-size="6" font-family="Open Sans" font-weight="normal" font-style="normal" letter-spacing="0" alignment-baseline="before-edge" transform="matrix(1 0 0 1 -4.915904198062435 -42.31431646932185)" style="line-height:100%" xml:space="preserve" dominant-baseline="text-before-edge" opacity="1" fill="#b0c4de" fill-opacity="1">1</text>
+                        </g>
+
+			<!-- x-axis marker -->
+			<g>
+				<g>
+					<path d="M599.32 242.26L599.32 236.26" opacity="1" fill-opacity="0" stroke="#b6b6b6" stroke-width="1" stroke-opacity="0.2"></path>
+				</g>
+			</g>
+		</g>
+	</g>
+
+	<!-- place-holder to populate hit stats: *must* be one before the last SVG child element -->
+	<g></g>
+
+	<!-- place-holder to populate hit stats at given position: *must* be the last SVG child element -->
+	<g></g>

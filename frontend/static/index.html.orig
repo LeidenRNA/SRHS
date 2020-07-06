@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Structural RNA Homology Search</title>
+
+  <link href="css/bootstrap-4.3.1.min.css.gz" rel="stylesheet">
+  <link href="css/dashboard.min.css.gz" rel="stylesheet">
+  <link href="css/rna-1.0.min.css.gz" rel="stylesheet">
+</head>
+
+<body>
+  <div class="d-flex toggled" id="rna-wrapper">
+
+    <div class="bg-dark border-right d-flex flex-column" id="rna-sidebar">
+
+      <div class="container-fluid sidebar-heading-bar">
+        <div class="sidebar-heading-vspace"></div>
+        <div class="sidebar-heading-content text-light">
+          STRUCTURAL&nbsp;RNA<br>HOMOLOGY&nbsp;SEARCH
+        </div>
+        <div class="sidebar-heading-vspace"></div>
+      </div>
+
+      <div class="list-group list-group-flush">
+        <a class="list-group-item list-group-item-action text-light rna-sidebar-link selectSequencesToggle" href="#">
+          <div class="rna-feather-nav-box">
+		  <svg class="inline-feather rna-feather-nav rna-feather-nav-animate-in">
+			  <line x1="17" y1="10" x2="3" y2="10"></line>
+			  <line x1="21" y1="6" x2="3" y2="6"></line>
+			  <line x1="21" y1="14" x2="3" y2="14"></line>
+			  <line x1="17" y1="18" x2="3" y2="18"></line>
+		  </svg>
+	  </div>
+          <span class="rna-text-nav">Select Sequences</span>
+        </a>
+        <a class="list-group-item list-group-item-action text-light rna-sidebar-link chooseCSSDToggle" href="#">
+          <div class="rna-feather-nav-box">
+                  <svg class="inline-feather rna-feather-nav rna-feather-nav-animate-in">
+			  <path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3
+-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path>
+                  </svg>
+	  </div>
+          <span class="rna-text-nav">Choose CSSDs</span>
+        </a>
+	<a class="list-group-item list-group-item-action text-light rna-sidebar-link" href="#" id="searchLink">
+          <div class="rna-feather-nav-box">
+		  <svg class="inline-feather rna-feather-nav rna-feather-nav-animate-in">
+			  <polyline points="12 18 18 12 12 6"></polyline>
+			  <polyline points="3 18 9 12 3 6"></polyline>
+                  </svg>
+	  </div>
+          <span class="rna-text-nav">Run Search</span>
+        </a>
+        <a class="list-group-item list-group-item-action text-light rna-sidebar-link viewJobsToggle" href="#">
+          <div class="rna-feather-nav-box">
+		  <svg class="inline-feather rna-feather-nav rna-feather-nav-animate-in">
+			  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+			  <polyline points="2 17 12 22 22 17"></polyline>
+			  <polyline points="2 12 12 17 22 12"></polyline>
+                  </svg>
+	  </div>
+          <span class="rna-text-nav">View Jobs/Hits</span>
+        </a>
+        <a class="list-group-item list-group-item-action text-light rna-sidebar-link" tabindex="-1" href="#" data-toggle="modal" data-target="#searchHelpModal">
+          <div class="rna-feather-nav-box">
+		  <svg class="inline-feather rna-feather-nav rna-feather-nav-animate-in">
+			  <polygon points="13 19 22 12 13 5 13 19"></polygon>
+			  <polygon points="2 19 11 12 2 5 2 19"></polygon>
+                  </svg>
+	  </div>
+          <span class="rna-text-nav">About SRHS</span>
+        </a>
+      </div>
+
+      <div class="d-flex sidebar-footer-bar flex-column justify-content-end">
+        <div class="fluid-container list-group list-group-flush" id="accessProfileContainer">
+          <li class="list-group-item list-group-item-action text-light">
+            <div class="row">
+              <div class="col-auto rna-feather-nav-box">
+	              <svg class="inline-feather rna-feather-nav">
+                              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                              <circle cx="12" cy="7" r="4"></circle>
+                      </svg>
+              </div>
+              <div class="col-10 rna-no-spacer">
+                <div class="rna-text-nav-small-low-profile-container">
+                  <span class="col-12 rna-text-nav-small-low-profile" id="accessProfileAssist"></span>
+                </div>
+              </div>              
+            </div>
+            <div class="row">
+              <div class="col-auto rna-text-nav-medium" id="accessProfile">Access Profile</div>
+              <div class="col-2 rna-no-spacer">
+                <div class="rna-feather-nav-medium-box" id="accessProfileLogin">
+			<svg class="inline-feather-medium rna-feather-nav-medium" id="accessProfileLoginIcon" width="18" height="18" viewBox="0 0 24 24">
+				<path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
+				<line x1="12" y1="2" x2="12" y2="12"></line>
+			</svg>
+		</div>
+              </div>
+              <div class="col-2 rna-no-spacer">
+                <div class="rna-feather-nav-medium-box" id="accessProfileRegister">
+			<svg class="inline-feather-medium rna-feather-nav-medium" width="18" height="18" viewBox="0 0 24 24">
+				<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+				<circle cx="9" cy="7" r="4"></circle>
+				<path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+				<path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+		</div>
+              </div>
+              <div class="col-2 rna-no-spacer">
+                <div class="rna-feather-nav-medium-box" id="accessProfileGuest">
+			<svg class="inline-feather-medium rna-feather-nav-medium-disabled" id="accessProfileGuestIcon" width="18" height="18" viewBox="0 0 24 24">
+				<polygon points="5 4 15 12 5 20 5 4"></polygon>
+				<line x1="19" y1="5" x2="19" y2="19"></line>
+			</svg>
+		</div>
+              </div>
+            </div>
+          </li>
+        </div>
+        <div class="fluid-container list-group list-group-flush" id="computeResourcesContainer">
+          <li class="list-group-item list-group-item-bottom list-group-item-action text-light">
+            <div class="row">
+              <div class="col-3 rna-feather-nav-box">
+		<svg class="inline-feather rna-feather-nav" id="accessProfileGuestIcon">
+			<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+			<polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+			<line x1="12" y1="22.08" x2="12" y2="12"></line>
+                </svg>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-8 rna-text-nav-small" id="computeResources">Compute Resources</div>
+	      <div class="col-4 rna-feather-nav">
+		      <div class="row rna-feather-nav">
+			      <div class="col-4 rna-feather-nav">
+					<svg class="inline-feather" id="computeResourcesConnection" width="12" height="12" viewBox="0 0 24 24">
+						<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+					</svg>
+			      </div>
+			      <div class="col-4 rna-feather-nav">
+					<svg class="inline-feather" id="computeResourcesComms" width="12" height="12" viewBox="0 0 24 24">
+						<circle cx="12" cy="12" r="2"></circle>
+						<path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"></path>
+					</svg>
+			      </div>
+			      <div class="col-4 rna-feather-nav">
+					<svg class="inline-feather" id="computeResourcesFail" width="12" height="12" viewBox="0 0 24 24">
+						<path d="M23 12a11.05 11.05 0 0 0-22 0zm-5 7a3 3 0 0 1-6 0v-7"></path>
+					</svg>
+			      </div>
+		      </div>
+	      </div>
+            </div>
+            <div class="row">
+              <div class="rna-text-nav-small-low-profile-container">
+                <span class="col-12 rna-text-nav-small-low-profile" data-bind="text: lastLogMessage" id="computeResourcesLastLog"></span>
+              </div>
+            </div>
+          </li>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="rna-page">
+      <div class="container-fluid">
+
+        <!-- page content cards -->
+        <div class="card rna-card-column">
+
+          <!-- row card and content div for chooseCSSD and selectSequences cards -->
+          <div class="content rna-card-column-content rna-card-row bg-light d-none" id="CSSDSequencesContent">
+
+            <div class="card d-none" id="selectSequencesCard">
+              <div class="header rna-card-column-header bg-info">
+
+                <nav class="navbar navbar-expand-xl navbar-light bg-info rna-navbar-header">
+
+                  <div class="rna-card-title">Sequences</div>
+
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-sequences" aria-controls="navbar-sequences" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+
+                  <div class="collapse navbar-collapse" id="navbar-sequences">
+                    <ul class="navbar-nav mr-auto">
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bind="attr: { hidden: !hasCapability ('SEQUENCES', 'SEARCH')() }" tabindex="-1" id="navbar-sequences-select" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			  <svg class="inline-feather rna-nav-group-member-icon" width="18" height="18" viewBox="0 0 24 24">
+				<path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"></path>
+				<path d="M13 13l6 6"></path>
+                          </svg>
+                          <span class="badge badge-light rna-card-menu-text-background" data-bind="text: numSequencesSelected ()>0 ? numSequencesSelected() : ''"></span>
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="navbar-sequences-groups-dropdown">
+                          <a class="dropdown-item" id="navbar-seqeunces-groups-internal-All" href="#">All</a>
+                          <a class="dropdown-item" id="navbar-seqeunces-groups-internal-None" href="#">None</a>
+                          <a class="dropdown-item" id="navbar-seqeunces-groups-internal-By-search" href="#">By search</a>
+                          <div class="dropdown-divider"></div>
+                          <script type="text/html" id="sequenceGroups-template">
+                                  <a class="dropdown-item" data-bind="text: group, attr: { id: 'navbar-seqeunces-groups-'+group }"></a>
+                          </script>
+                          <div data-bind="template: {name: 'sequenceGroups-template', foreach: sequenceGroups},childrenComplete: updateSequenceEventHandlers"></div>
+                        </div>
+
+                        <a class="nav-link" data-bind="attr: { hidden: !hasCapability ('SEQUENCES', 'SEARCH')() }" tabindex="-1" href="#">
+                                <span class="rna-card-menu-text">&nbsp;Select</span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+			      <a class="nav-link" href="#" data-bind="attr: { hidden: !hasCapability ('SEQUENCES', 'NEW')() }" tabindex="-1" data-toggle="modal" data-target="#NewSequenceModal">
+			  <svg class="inline-feather rna-nav-group-member-icon" width="18" height="18" viewBox="0 0 24 24">
+				<line x1="12" y1="2" x2="12" y2="6"></line>
+				<line x1="12" y1="18" x2="12" y2="22"></line>
+				<line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line>
+				<line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line>
+				<line x1="2" y1="12" x2="6" y2="12"></line>
+				<line x1="18" y1="12" x2="22" y2="12"></line><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line>
+			  </svg><br>
+                          <span class="rna-card-menu-text">New</span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+			      <a class="nav-link" href="#" data-bind="attr: { hidden: !hasCapability ('SEQUENCES', 'DELETE')() }" tabindex="-1" id="navbar-sequences-delete">
+			  <svg class="inline-feather rna-nav-group-member-icon" width="18" height="18" viewBox="0 0 24 24">
+				<rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+				<line x1="9" y1="9" x2="15" y2="15"></line>
+				<line x1="15" y1="9" x2="9" y2="15"></line>
+			  </svg><br>
+                          <span class="rna-card-menu-text">Delete</span>
+                        </a>
+                      </li>
+		    </ul>
+
+                    <ul class="navbar-nav ">
+                      <li class="nav-item">
+                        <a class="nav-link selectSequencesToggle" title="minimize" href="#">
+				<svg class="inline-feather" width="24" height="24" viewBox="0 0 24 24">
+					<line x1="5" y1="12" x2="19" y2="12"></line>
+				</svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </nav>
+
+              </div>
+
+              <div class="content rna-card-column-content bg-light">
+
+                <div class="overflow-auto" id="selectSequencesCardContent">
+
+                  <script type="text/html" id="sequences-template">
+                    <div data-bind="class: selectedClass, attr: { id: 'sequence'+_id}">
+                      <div class="row rna-no-margin-padding">
+		      	<div class="col-5 rna-no-margin-padding" data-toggle="tooltip" data-bind="click: $parent.toggleSequences, attr: { title: definition}">
+                                <div class="row rna-no-margin-padding">
+					<div class="col-1 rna-no-margin-padding"></div>
+					<div class="col-10 rna-no-margin-padding text-content">
+                                		<a href="#" tabindex="-1" data-bind="text: definition" class="row rna-no-margin-padding text-content truncate-long-text"></a>   
+					</div>
+					<div class="col-1 rna-no-margin-padding"></div>
+				</div>
+                        </div>
+
+			<div class="col-3 rna-no-margin-padding">
+				<div class="row rna-no-margin-padding">
+					<div class="col-5 rna-no-margin-padding text-content truncate-long-text" data-toggle="tooltip" data-bind="text: accession, attr: { title: accession }"></div>
+					<div class="col-1 rna-no-margin-padding"></div>
+					<div class="col-5 rna-no-margin-padding text-content truncate-long-text" data-toggle="tooltip" data-bind="text: group, attr: { title: group }"></div>
+					<div class="col-1 rna-no-margin-padding"></div>
+				</div>
+                        </div>
+
+                        <div class="col-4 rna-no-margin-padding">
+                                <div class="row rna-no-margin-padding">
+					<div class="col-11 rna-no-margin-padding">
+						<div class="row rna-no-margin-padding text-content truncate-long-text" data-bind="text: seqnt"></div>
+					</div>
+                                        <div class="col-1 rna-no-margin-padding"></div> 
+                                </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </script>
+
+                  <div class="row rna-no-margin-padding">
+                      <div class="col-5 rna-no-margin-padding">
+			      <div class="row rna-no-margin-padding">
+                                        <div class="col-1 rna-no-margin-padding"></div>
+					<div class="col-10 rna-no-margin-padding text-header">Definition</div>
+					<div class="col-1 rna-no-margin-padding"></div>
+			      </div>
+		      </div>  
+
+		      <div class="col-3 rna-no-margin-padding">
+			      <div class="row rna-no-margin-padding">
+                      			<div class="col-5 rna-no-margin-padding text-header">Accession</div>
+					<div class="col-1 rna-no-margin-padding"></div>
+		      			<div class="col-5 rna-no-margin-padding text-header">Group</div> 
+					<div class="col-1 rna-no-margin-padding"></div>
+			      </div>
+		      </div>
+
+                      <div class="col-4 rna-no-margin-padding">
+                                <div class="row rna-no-margin-padding">
+					<div class="col-11 rna-no-margin-padding text-header">Nucleotide&nbsp;Sequence</div> 
+                                        <div class="col-1 rna-no-margin-padding"></div>
+                                </div>
+                      </div>
+                  </div>
+
+       		<div class="col rna-CardContent-view striped-row-container" id="selectSequencesScrollDiv" data-bind="template: {name: 'sequences-template', foreach: sequences}, attr: { style: selectSequencesScrollStyle}"></div>
+
+                </div>
+
+              </div>
+            </div>
+		
+            <div class="card d-none" id="chooseCSSDsCard">
+              <div class="header rna-card-column-header bg-info">
+                
+                <nav class="navbar navbar-expand-xl navbar-light bg-info rna-navbar-header">
+
+                  <div class="rna-card-title">CSSDs</div>
+
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-CSSD" aria-controls="navbar-CSSD" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+
+                  <div class="collapse navbar-collapse" id="navbar-CSSD">
+                    <ul class="navbar-nav mr-auto">
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bind="attr: { hidden: !hasCapability ('CSSD', 'SEARCH')() }" tabindex="-1" id="navbar-CSSDs-select" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			  <svg class="inline-feather rna-nav-group-member-icon" width="18" height="18" viewBox="0 0 24 24">
+				<path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"></path>
+				<path d="M13 13l6 6"></path>
+			  </svg>
+			  <span class="badge badge-light rna-card-menu-text-background" data-bind="text: numCSSDsSelected ()>0 ? numCSSDsSelected() : ''"></span>
+			</a>
+			<div class="dropdown-menu" aria-labelledby="navbar-CSSDs-groups-dropdown">
+                          <a class="dropdown-item" id="navbar-CSSDs-internal-All" href="#">All</a>
+                          <a class="dropdown-item" id="navbar-CSSDs-internal-None" href="#">None</a>
+                          <a class="dropdown-item" id="navbar-CSSDs-internal-By-search" href="#">By search</a>
+                        </div>
+                        <a class="nav-link" tabindex="-1" data-bind="attr: { hidden: !hasCapability ('CSSD', 'SEARCH')() }" href="#"><span class="rna-card-menu-text">&nbsp;Select</span></a>
+		      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#" data-bind="attr: { hidden: !hasCapability ('CSSD', 'NEW')() }" tabindex="-1" id="navbar-CSSDs-new">
+			  <svg class="inline-feather rna-nav-group-member-icon" width="18" height="18" viewBox="0 0 24 24">
+				<line x1="12" y1="2" x2="12" y2="6"></line>
+				<line x1="12" y1="18" x2="12" y2="22"></line>
+				<line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line>
+				<line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line>
+				<line x1="2" y1="12" x2="6" y2="12"></line>
+				<line x1="18" y1="12" x2="22" y2="12"></line>
+				<line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line>
+				<line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line>
+			  </svg><br>
+                          <span class="rna-card-menu-text">New</span>
+                        </a>
+                      </li>
+		      <li class="nav-item">
+                        <a class="nav-link" href="#" tabindex="-1" data-bind="attr: { hidden: !hasCapability ('CSSD', 'EDIT')() }" tabindex="-1" id="navbar-CSSDs-edit">
+			  	<svg class="inline-feather rna-nav-group-member-icon" width="18" height="18" viewBox="0 0 24 24">
+					<path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+					<path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+				</svg><br>
+                          <span class="rna-card-menu-text">Edit</span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+			      <a class="nav-link" href="#" tabindex="-1" data-bind="attr: { hidden: !hasCapability ('CSSD', 'DELETE')() }" id="navbar-CSSDs-delete">
+			  	<svg class="inline-feather rna-nav-group-member-icon" width="18" height="18" viewBox="0 0 24 24">
+					<rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+					<line x1="9" y1="9" x2="15" y2="15"></line>
+					<line x1="15" y1="9" x2="9" y2="15"></line>
+				</svg><br>
+                          <span class="rna-card-menu-text">Delete</span>
+                        </a>
+                      </li>
+                    </ul>
+
+                    <ul class="navbar-nav ">
+                      <li class="nav-item">
+                        <a class="nav-link chooseCSSDToggle" title="minimize" href="#">
+			  	<svg class="inline-feather" width="24" height="24" viewBox="0 0 24 24">
+					<line x1="5" y1="12" x2="19" y2="12"></line>
+				</svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                </nav>
+
+              </div>
+              <div class="content rna-card-column-content bg-light">
+                <div class="overflow-auto" id="chooseCSSDsCardContent">
+
+                  <script type="text/html" id="CSSDs-template">
+                    <div data-bind="class: selectedClass, attr: { id: 'CSSD'+_id}">
+		      <div class="row rna-no-margin-padding">    
+			<div class="col-3 rna-no-margin-padding">  
+				<div class="row rna-no-margin-padding"> 
+					<div class="col-1 rna-no-margin-padding">
+					    <div class="svg-container" data-bind="attr: { hidden: !published }">  
+						<svg class="inline-feather rna-nav-group-member-icon svg-content" width="12" height="12" viewBox="0 0 24 24">
+							<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+						</svg>
+					    </div>
+					</div>
+					<div class="col-10 rna-no-margin-padding" data-toggle="tooltip" data-bind="click: $parent.toggleCSSD, attr: { title: name}"><a href="#" class="rna-no-margin-padding text-content truncate-long-text" tabindex="-1" data-bind="text: name"></a></div> 
+                                        <div class="col-1 rna-no-margin-padding"></div>
+                                </div>
+                        </div>
+
+			<div class="col-9 rna-no-margin-padding">   
+                                <div class="row rna-no-margin-padding">
+                                        <div class="col-11 rna-no-margin-padding text-content small-truetype-bold-nowrap truncate-long-text tip" data-bind="html: cs"></div>
+					<div class="col-1 rna-no-margin-padding"></div>
+                                </div>
+                        </div>
+                      </div>
+                    </div>
+                  </script>
+
+		  <div class="row rna-no-margin-padding">   
+			<div class="col-3 rna-no-margin-padding"> 
+				<div class="row rna-no-margin-padding">
+					<div class="col-1 rna-no-margin-padding"></div>
+					<div class="col-10 rna-no-margin-padding text-header">Name</div>   
+                                        <div class="col-1 rna-no-margin-padding"></div>
+				</div>
+                        </div>
+
+			<div class="col-9 rna-no-margin-padding">   
+                                  <div class="row rna-no-margin-padding">
+                                          <div class="col-11 rna-no-margin-padding text-header">Consensus&nbsp;Secondary&nbsp;Structure&nbsp;Descriptor</div>  
+					  <div class="col-1 rna-no-margin-padding"></div>
+                                  </div>
+                        </div>
+                  </div>
+
+                  <div class="col rna-CardContent-view striped-row-container" id="chooseCSSDsScrollDiv" data-bind="template: {name: 'CSSDs-template', foreach: CSSDs}, attr: { style: chooseCSSDsScrollStyle}"></div>
+
+                </div>
+              </div>
+
+	    </div>
+
+          </div>
+            
+          <div class="content rna-card-column-content rna-card-row bg-light d-none" id="JobsContent">
+
+            <div class="card d-none" id="viewJobsCard">
+
+              <div class="header rna-card-column-header bg-info">
+                
+                <nav class="navbar navbar-expand-xl navbar-light bg-info rna-navbar-header">
+
+                  <div class="rna-card-title">Jobs/Hits</div>
+
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-jobs" aria-controls="navbar-jobs" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+
+                  <div class="collapse navbar-collapse" id="navbar-jobs">
+                    <ul class="navbar-nav mr-auto">
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bind="attr: { hidden: !hasCapability ('JOBS', 'SEARCH')() }" tabindex="-1" id="navbar-jobs-select" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<svg class="inline-feather rna-nav-group-member-icon" width="18" height="18" viewBox="0 0 24 24">
+					<path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"></path>
+					<path d="M13 13l6 6"></path>
+				</svg>
+                          	<span class="badge badge-light rna-card-menu-text-background" data-bind="text: numJobsSelected ()>0 ? numJobsSelected() : ''"></span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbar-jobs-groups-dropdown">
+                          <a class="dropdown-item" id="navbar-jobs-internal-All" href="#">All</a>
+                          <a class="dropdown-item" id="navbar-jobs-internal-None" href="#">None</a>
+                          <a class="dropdown-item" id="navbar-jobs-internal-By-search" href="#">By search</a>
+                        </div>
+                        <a class="nav-link" tabindex="-1" data-bind="attr: { hidden: !hasCapability ('JOBS', 'SEARCH')() }" href="#"><span class="rna-card-menu-text">&nbsp;Select</span></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#" tabindex="-1" data-bind="attr: { hidden: !hasCapability ('JOBS', 'DELETE')() }" id="navbar-jobs-delete">
+				<svg class="inline-feather rna-nav-group-member-icon" width="18" height="18" viewBox="0 0 24 24">
+					<rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+					<line x1="9" y1="9" x2="15" y2="15"></line>
+					<line x1="15" y1="9" x2="9" y2="15"></line>
+				</svg><br>
+                          <span class="rna-card-menu-text">Delete</span>
+                        </a>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" tabindex="-1" data-bind="attr: { hidden: !hasCapability ('JOBS', 'ORDER')() }" href="#" id="navbar-order-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			  	<svg class="inline-feather rna-nav-group-member-icon" width="18" height="18" viewBox="0 0 24 24">
+					<line x1="12" y1="19" x2="12" y2="5"></line>
+					<polyline points="5 12 12 5 19 12"></polyline>
+				</svg>
+                          <span class="badge badge-light rna-card-menu-text-background" data-bind="text: hitOrder"></span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbar-jobs-show-dropdown">
+                          <a class="dropdown-item" id="navbar-order-dropdown-item-energy" href="#">Free&nbsp;Energy</a>
+                          <a class="dropdown-item" id="navbar-order-dropdown-item-position" href="#">Position</a>
+                        </div>
+                        <a class="nav-link" tabindex="-1" data-bind="attr: { hidden: !hasCapability ('JOBS', 'ORDER')() }" href="#"><span class="rna-card-menu-text">Order by</span></a>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" tabindex="-1" data-bind="attr: { hidden: !hasCapability ('JOBS', 'SHOW')() }" href="#" id="navbar-hits-show-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			  	<svg class="inline-feather rna-nav-group-member-icon" width="18" height="18" viewBox="0 0 24 24">
+					<path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+					<path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+				</svg>
+                          <span class="badge badge-light rna-card-menu-text-background" data-bind="text: hitLimit"></span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbar-hits-show-dropdown">
+                          <a class="dropdown-item" id="navbar-hits-show-dropdown-item-10" href="#">10</a>
+                          <a class="dropdown-item" id="navbar-hits-show-dropdown-item-20" href="#">20</a>
+                          <a class="dropdown-item" id="navbar-hits-show-dropdown-item-50" href="#">50</a>
+                        </div>
+                        <a class="nav-link" tabindex="-1" data-bind="attr: { hidden: !hasCapability ('JOBS', 'SHOW')() }" href="#"><span class="rna-card-menu-text">Show</span></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#" tabindex="-1" data-bind="attr: { hidden: !hasCapability ('JOBS', 'SEARCH')() }" id="navbar-jobs-download">
+				<svg class="inline-feather rna-nav-group-member-icon" width="18" height="18" viewBox="0 0 24 24">
+					<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+					<polyline points="7 10 12 15 17 10"></polyline>
+					<line x1="12" y1="15" x2="12" y2="3"></line>
+				</svg><br>
+                          <span class="rna-card-menu-text">Save</span>
+                        </a>
+                      </li>
+                    </ul>
+
+                    <ul class="navbar-nav ">
+                      <li class="nav-item">
+                        <a class="nav-link viewJobsToggle" title="minimize" href="#">
+			  	<svg class="inline-feather" width="24" height="24" viewBox="0 0 24 24">
+					<line x1="5" y1="12" x2="19" y2="12"></line>
+				</svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                </nav>
+
+              </div>
+
+              <div class="content rna-card-column-content rna-card-row bg-light" id="JobsResultsContent">
+
+                <div class="overflow-auto" id="viewJobsCardContent">
+
+                  <script type="text/html" id="jobs-template">
+                    <div data-bind="class: selectedClass, attr: {id: 'job'+_id}">
+		      <div class="row rna-no-margin-padding">   
+                        <div class="col rna-no-margin-padding" data-bind="class: viewedClass">
+                          <div class="row rna-no-margin-padding">
+			    <div class="col-2 rna-no-margin-padding">   
+			    	<div class="row rna-no-margin-padding">
+					<div class="col-1 rna-no-margin-padding"></div>
+					<div class="col-10 rna-no-margin-padding">
+			      			<a href="#" tabindex="-1" data-bind="click: $parent.toggleJobs, text: formatted_id" class="rna-no-margin-padding text-content"></a>    
+					</div>
+					<div class="col-1 rna-no-margin-padding"></div>
+				</div>
+                            </div>
+
+			    <div data-toggle="tooltip" data-bind="click: $parent.findSequenceByName, attr: { title: definition }" class="col-5 rna-no-margin-padding rna-link">
+			    	<div class="row rna-no-margin-padding">
+					<div class="col-11 rna-no-margin-padding text-content truncate-long-text" data-bind="text: definition"></div>
+					<div class="col-1 rna-no-margin-padding"></div>
+				</div>
+			    </div>
+
+                            <div data-toggle="tooltip" data-bind="click: $parent.findCSSDByName, text: name, attr: { title: name }" class="col-4 rna-no-margin-padding text-content truncate-long-text rna-link"></div>
+
+			    <div class="col-1 rna-no-margin-padding">   
+			    	<div class="row rna-no-margin-padding">
+					<div class="col-2 rna-no-margin-padding"></div>
+			      		<div class="col-6 rna-no-margin-padding">
+						<div class="row rna-no-margin-padding rna-feather-nav-job-status">
+							<div class="col-1 rna-no-margin-padding"></div>
+							<div class="col-4 rna-no-margin-padding">
+								<div class="row rna-no-margin-padding rna-text-nav-medium">
+                                                                        <!-- ko ifnot: isDone() -->
+                                                                                <!-- ko ifnot: isStarted() -->
+											<!-- pause -->
+											<svg class="inline-feather" width="14" height="14" viewBox="0 0 24 24">
+												<rect x="6" y="4" width="4" height="16"></rect>
+												<rect x="14" y="4" width="4" height="16"></rect>
+											</svg>
+                                                                                <!-- /ko -->
+                                                                                <!-- ko if: isStarted() -->
+											<!-- fast-forward -->
+											<div class="rna-no-margin-padding rna-text-nav-medium" data-toggle="tooltip" data-bind="attr: { title: status() }">
+												<svg class="inline-feather" width="14" height="14" viewBox="0 0 24 24">
+													<polygon points="13 19 22 12 13 5 13 19"></polygon>
+													<polygon points="2 19 11 12 2 5 2 19"></polygon>
+												</svg>
+											</div>
+                                                                                <!-- /ko -->
+                                                                        <!-- /ko -->
+                                                                        <!-- ko if: isDone() -->
+                                                                                <!-- ko if: hit_count()==0 -->
+											<!-- square -->
+											<svg class="inline-feather" width="14" height="14" viewBox="0 0 24 24">
+												<rect x="4" y="4" width="16" height="17" rx="2" ry="2"></rect>
+											</svg>
+                                                                                <!-- /ko -->
+										<!-- ko if: hit_count()>0 --> 
+											<!-- layers -->
+											<div class="rna-no-margin-padding rna-text-nav-medium" data-toggle="tooltip" data-bind="attr: { title: hit_count ()+(hit_count ()>1?' hits':' hit') }">
+												<svg class="inline-feather" width="14" height="14" viewBox="0 0 24 24">
+													<polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline>
+													<polyline points="2 12 12 17 22 12"></polyline>
+												</svg>
+											</div>
+                                                                                <!-- /ko -->
+                                                                        <!-- /ko -->
+								</div>
+							</div>
+							<div class="col-2 rna-no-margin-padding"></div>
+							<div class="col-4 rna-no-margin-padding">
+								<div class="row rna-no-margin-padding rna-text-nav-medium">
+                                                                        <!-- ko ifnot: isSuccess() -->
+										<!--cloud-lightning-->
+										<div class="rna-no-margin-padding rna-text-nav-medium" data-toggle="tooltip" data-bind="attr: { title: compute_status (), id: sequence_id+':'+cssd_id }" onclick="retryFailedJob (this.id)">
+										<svg class="inline-feather" width="14" height="14" viewBox="0 0 24 24" style="stroke: brown">
+											<path d="M19 16.9A5 5 0 0 0 18 7h-1.26a8 8 0 1 0-11.62 9"></path>
+											<polyline points="13 11 9 17 15 17 11 23"></polyline>
+										</svg>
+										</div>
+                                                                        <!-- /ko -->
+                                                                        <!-- ko if: isSuccess() -->
+										<!--sun-->
+										<div class="rna-no-margin-padding rna-text-nav-medium" data-toggle="tooltip" data-bind="attr: { title: compute_status () }">
+										<svg class="inline-feather" width="14" height="14" viewBox="0 0 24 24">
+											<circle cx="12" cy="12" r="5"></circle>
+											<line x1="12" y1="1" x2="12" y2="3"></line>
+											<line x1="12" y1="21" x2="12" y2="23"></line>
+											<line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+											<line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+											<line x1="1" y1="12" x2="3" y2="12"></line>
+											<line x1="21" y1="12" x2="23" y2="12"></line>
+											<line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+											<line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+										</svg>
+										</div>
+									<!-- /ko -->
+								</div>
+							</div>
+							<div class="col-1 rna-no-margin-padding"></div>
+						</div>
+                              		</div>
+					<div class="col-4 rna-no-margin-padding"></div>
+				</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </script>
+		  <div class="row rna-no-margin-padding rna-CardContent-header-border">   
+			<div class="col-2 rna-no-margin-padding">
+				<div class="row rna-no-margin-padding">
+					<div class="col-1 rna-no-margin-padding"></div>
+					<div class="col-10 rna-no-margin-padding text-header">Time&nbsp;of&nbsp;Entry</div>    
+					<div class="col-1 rna-no-margin-padding"></div>
+				</div>	
+			</div>
+
+			<div class="col-5 rna-no-margin-padding">
+				<div class="row rna-no-margin-padding">
+					<div class="col-11 rna-no-margin-padding text-header">Sequence&nbsp;Definition</div>
+					<div class="col-1 rna-no-margin-padding"></div>
+				</div>
+			</div>
+
+                        <div class="col-4 rna-no-margin-padding text-header">CSSD&nbsp;Name</div>
+
+			<div class="col-1 rna-no-margin-padding">
+				<div class="row rna-no-margin-padding">
+					<div class="col-2 rna-no-margin-padding"></div>
+					<div class="col-6 rna-no-margin-padding text-header-center">Status</div> 
+					<div class="col-4 rna-no-margin-padding"></div>
+				</div>
+			</div>
+                  </div>
+
+			<div class="col rna-CardContent-view striped-row-container" id="viewJobsScrollDiv" data-bind="template: {name: 'jobs-template', foreach: jobs}, attr: { style: viewJobsScrollStyle}" id="jobs-container"></div>
+		</div>
+
+                <div class="overflow-auto" id="showHitsCardContent">
+
+		<script type="text/html" id="hits-template">
+                    <div data-bind="class: selectedClass, attr: {id: 'hit'+_id}">
+		      <div class="row rna-no-margin-padding"> 
+                        <div class="col rna-no-margin-padding" data-bind="class: viewedClass">
+                          <div class="row rna-no-margin-padding">
+				<div class="col-1 rna-no-margin-padding">
+					<div class="row rna-no-margin-padding">
+						<div class="col-3 rna-no-margin-padding"></div>
+						<div class="col-9 rna-no-margin-padding text-content-center" data-bind="text: position"></div>
+					</div>
+				</div>
+
+				<div class="col-2 rna-no-margin-padding text-content-center" data-bind="text: fe"></div>
+
+				<div class="col-9 rna-no-margin-padding text-content" data-bind="text: hit"></div>
+			  </div>
+                        </div>
+                      </div>
+                    </div>
+		</script>
+
+		<div class="row rna-no-margin-padding rna-CardContent-header-border">   
+			<div class="col-1 rna-no-margin-padding">
+				<div class="row rna-no-margin-padding">
+					<div class="col-3 rna-no-margin-padding"></div>
+					<div class="col-9 rna-no-margin-padding text-header-center">Position</div>
+				</div>
+			</div>
+
+			<div class="col-2 rna-no-margin-padding text-header-center">Free&nbsp;Energy</div>
+
+                        <div class="col-9 rna-no-margin-padding text-header">Hit</div>
+		</div>
+
+		<div class="col rna-CardContent-view striped-row-container" id="showHitsScrollDiv" data-bind="template: {name: 'hits-template', foreach: hits}, attr: { style: showHitsScrollStyle}" id="hits-container"></div>
+
+                </div>
+
+              </div>
+
+            </div> 
+
+          </div>
+
+        </div>
+
+        <div class="row flex-container" id="rna-bottombar">
+          <div class="col-1 rna-control">
+            <div class="row">
+              <div class="col">
+                <button class="btn btn-outline-secondary rna-sidebar-toggle-button" id="rna-sidebar-toggle">
+                  <div class="rna-feather-nav-box" title="toggle main panel">
+			  <svg class="inline-feather rna-feather-nav" width="24" height="24" viewBox="0 0 24 24">
+				 <line x1="5" y1="12" x2="19" y2="12"></line>
+			  </svg>
+		  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+	  <div class="col-1 rna-control rna-no-spacer" id="rna-hit-stats">
+		  <div class="row rna-no-spacer" style="height: 100%">
+			  <div class="col-4 rna-no-spacer"></div>
+			  <div class="col-8 rna-no-spacer">
+				  <button id="statsButton" class="btn btn-outline-secondary rna-stats-toggle-button border-white" style="display: none" tabindex="-1" href="#" data-toggle="modal" data-target="#StatsModal">
+                  			<div title="view Job/Hits stats" class="rna-no-spacer" style="height: 100%">
+						<svg id="statsButtonSVG" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" viewBox="0 0 600 270" width=100% height=100%>
+						</svg>
+					</div>
+                		  </button>
+			  </div>
+		  </div>
+	  </div>
+          <div class="col-7" id="rna-hit">
+            <div class="row">
+              <span data-bind="html: hitCSSD"></span>
+            </div>
+            <div class="row">
+              <span data-bind="html: hitSequence"></span>
+            </div>
+            <div class="row">
+              <span data-bind="html: hitSummaryData"></span>
+            </div>
+          </div>
+	  <div class="col-1" id="rna-hit-spacer">
+	  </div>
+          <div class="col-2" id="rna-stats">
+            <div class="row">
+              <span class="col" data-bind="html: viewedJobNumHitsMessage"></span>
+            </div>
+            <div class="row">
+              <span class="col" data-bind="html: viewedJobNumHitsIndices"></span></div>
+            <div class="row">
+              <span class="col">&nbsp;</span>
+            </div>
+          </div>  
+        </div>
+
+      </div>
+
+      <!-- Search Help Modal -->
+      <div class="modal fade" id="searchHelpModal" tabindex="-1" role="dialog" aria-labelledby="searchHelpModal">
+        <div class="modal-dialog modal-xl" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Structural RNA Homology Search</h4>
+            </div>
+            <div class="modal-body" id="searchHelpModal-body">            
+
+            <div id="aboutContent">
+		    <!-- about content (about.html) is loaded through jquery below -->
+	    </div>
+
+            </div>
+            <div class="modal-footer justify-content-between">
+              <div><img class="rna-brand-icon" src="img/universiteit-leiden-logo.png"></div>
+              <div class="rna-brand-text">Imaging and Bioinformatics @ LIACS</div>
+              <div>
+              <button type="button" tabindex="-1" class="btn btn-default" data-dismiss="modal">
+		<svg class="inline-feather rna-feather-button" width="24" height="24" viewBox="0 0 24 24">
+			<line x1="18" y1="6" x2="6" y2="18"></line>
+			<line x1="6" y1="6" x2="18" y2="18"></line>
+		</svg>
+              </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- computerResourcesLog Modal -->
+      <div class="modal fade" id="computerResourcesLogModal" tabindex="-1" role="dialog" aria-labelledby="computerResourcesLogModal">
+        <div class="modal-dialog modal-xl" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Compute Resources Log</h4>
+            </div>
+
+            <div class="modal-body overflow-auto" id="computerResourcesLogModal-body">    
+
+              <script type="text/html" id="logs-template">
+                <div class="row rna-modal-table-row">
+                  <div class="col-3 rna-modal-table-col rna-log-time">
+                    <span data-bind="text: time"></span>
+                  </div>
+
+                  <div class="col-9 rna-modal-table-col rna-log-message text-truncate">
+                    <span data-bind="text: message"></span>
+                  </div>
+                </div>
+              </script>
+
+              <div class="rna-modal-table">
+                <div data-bind="template: {name: 'logs-template', foreach: logs}">
+                </div>
+              </div>
+
+            </div>
+
+            <div class="modal-footer justify-content-between">
+              <div>
+                <button type="button" class="btn btn-default" id="computerResourcesRestartButton">
+			<svg class="inline-feather rna-feather-button-light" width="18" height="18" viewBox="0 0 24 24">
+				<path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+			</svg>
+                </button>
+                <button type="button" class="btn btn-default" id="computerResourcesClearButton">
+		  	<svg class="inline-feather rna-feather-button-light" width="18" height="18" viewBox="0 0 24 24">
+				<polyline points="4 17 10 11 4 5"></polyline>
+				<line x1="12" y1="19" x2="20" y2="19"></line>
+			</svg>
+                </button>
+              </div>
+              <button type="button" class="btn btn-default" data-dismiss="modal">
+		      	<svg class="inline-feather rna-feather-button" width="18" height="18" viewBox="0 0 24 24">
+				<line x1="18" y1="6" x2="6" y2="18"></line>
+				<line x1="6" y1="6" x2="18" y2="18"></line>
+			</svg>
+              </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- New Sequence Modal -->
+        <div class="modal fade" id="NewSequenceModal" tabindex="-1" aria-labelledby="NewSequenceModal">
+          <div class="modal-dialog modal-lg" role="dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Create New Sequence</h4>
+              </div>
+              <div class="modal-body">
+                  <div class="table-span">
+                    <table id="new-sequence-table" class="table table-striped table-wrap remove-all-margin-padding">
+                      <tr class="d-flex" valign="middle">
+			      <td class="col-md-3"><h4>accession:</h4></td>
+                        <td class="col-md-9"><input id="new-sequence-table-accession" class="form-control"></input></td>
+                      </tr>
+                      <tr class="d-flex" valign="middle">
+			      <td class="col-md-3"><h4>definition:</h4></td>
+                        <td class="col-md-9"><input id="new-sequence-table-definition" class="form-control"></input></td>
+                      </tr>
+                      <tr class="d-flex" valign="middle">
+			      <td class="col-md-3"><h4>sequence:</h4></td>
+                        <td class="col-md-9"><textarea id="new-sequence-table-sequence"  class="form-control" style="vertical-align:top;height:200px;overflow-y:auto;font-family:'Courier New';"></textarea></td>
+                      </tr>
+                      <tr class="d-flex" valign="middle">
+			      <td class="col-md-3"><h4>group:</h4></td>
+                        <td class="col-md-9"><input id="new-sequence-table-group" class="form-control"></input></td>
+                      </tr>
+                    </table>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                <button id="new-sequence-accept" type="button" class="btn btn-info">Submit</button>
+                <button id="new-sequence-cancel" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CSSD Modal -->
+        <div class="modal fade" id="CSSDModal" tabindex="-1" aria-labelledby="CSSDModal">
+          <div class="modal-dialog modal-xl" role="dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Consensus Secondary Structure Descriptor</h4>
+              </div>
+              <div class="modal-body">
+                  <div class="table-span">
+                    <table id="cssd-table" class="table table-striped table-wrap remove-all-margin-padding">
+		      <tr class="d-flex" valign="middle">
+			<td class="col-md-3"><h4>consensus:</h4><h4>variability:</h4></td>
+                        <td class="col-md-9">
+				<input class="small-truetype-bold-nowrap form-control" id="cssd-table-consensus"></input>
+				<input class="small-truetype-bold-nowrap form-control" id="cssd-table-posvars"></input>
+			</td>
+                      </tr>
+                      <tr class="d-flex" valign="middle">
+			<td class="col-md-3"><h4>name:</h4></td>
+                        <td class="col-md-9"><input id="cssd-table-name" class="form-control"></input></td>
+                      </tr>
+		      <tr class="d-flex" valign="middle">
+			<td class="col form-inline">
+				<input id="cssd-table-availability-checkbox" type="checkbox" class="form-control"></input>&nbsp;<div id="cssd-table-availability-checkbox-label">Make available to all users</div>
+			</td>
+		      </tr>
+                    </table>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                <button id="cssd-accept" type="button" class="btn btn-info">Submit</button>
+                <button id="cssd-cancel" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Select Sequences By Search Modal -->
+        <div class="modal fade" id="SelectSequencesBySearchModal" tabindex="-1" aria-labelledby="SelectSequencesBySearchModal">
+          <div class="modal-dialog modal-md" role="dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Select Sequences By Search Term</h4>
+              </div>
+              <div class="modal-body">
+                  <div class="table-span">
+                    <table id="select-sequences-by-search-table" class="table table-striped table-wrap remove-all-margin-padding">
+                      <tr class="d-flex" valign="middle">
+                        <td class="col-md-3">search term:</td>
+                        <td class="col-md-9"><input id="select-sequences-by-search-table-term" style="width:150px"></input></td>
+                      </tr>
+                    </table>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                <button id="select-sequences-by-search-accept" type="button" class="btn btn-info">Submit</button>
+                <button id="select-sequences-by-search-cancel" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Select CSSDs by Search Modal -->
+        <div class="modal fade" id="SelectCSSDsBySearchModal" tabindex="-1" aria-labelledby="SelectCSSDsBySearchModal">
+          <div class="modal-dialog modal-md" role="dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Select CSSDs By Search Term</h4>
+              </div>
+              <div class="modal-body">
+                  <div class="table-span">
+                    <table id="select-CSSDs-by-search-table" class="table table-striped table-wrap remove-all-margin-padding">
+                      <tr class="d-flex" valign="middle">
+                        <td class="col-md-3">search term:</td>
+                        <td class="col-md-9"><input id="select-CSSDs-by-search-table-term" style="width:150px"></input></td>
+                      </tr>
+                    </table>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                <button id="select-CSSDs-by-search-accept" type="button" class="btn btn-info">Submit</button>
+                <button id="select-CSSDs-by-search-cancel" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Select Jobs by Search Modal -->
+        <div class="modal fade" id="SelectJobsBySearchModal" tabindex="-1" aria-labelledby="SelectJobsBySearchModal">
+          <div class="modal-dialog modal-md" role="dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Select Jobs By Search Term</h4>
+              </div>
+              <div class="modal-body">
+                  <div class="table-span">
+                    <table id="select-jobs-by-search-table" class="table table-striped table-wrap remove-all-margin-padding">
+                      <tr class="d-flex" valign="middle">
+                        <td class="col-md-3">search term:</td>
+                        <td class="col-md-9"><input id="select-jobs-by-search-table-term" style="width:150px"></input></td>
+                      </tr>
+                    </table>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                <button id="select-jobs-by-search-accept" type="button" class="btn btn-info">Submit</button>
+                <button id="select-jobs-by-search-cancel" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- Stats Modal -->
+        <div class="modal fade" id="StatsModal" tabindex="-1" aria-labelledby="StatsModal">
+          <div class="modal-dialog modal-xl" role="dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" data-bind="text: 'Job/Hits Statistics  [  '+viewedJobStatus()+'  ]'"></h5>
+              </div>
+              <div class="modal-body">
+		      <svg id="statsModalSVG" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" viewBox="0 0 600 270" width=100% height=100%>
+		      </svg>
+              </div>
+              <div class="modal-footer">
+		<button type="button" class="btn btn-default" data-dismiss="modal">
+                        <svg class="inline-feather rna-feather-button" width="18" height="18" viewBox="0 0 24 24">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+    <script>window.jQuery || document.write('<script src="js/jquery-3.4.0.min.js.gz"><\/script>')</script>
+    <script src="js/bootstrap-4.3.1.min.js.gz"></script>
+    <script src="js/mousetrap-1.4.6.min.js.gz"></script>
+    <script src="js/mousetrap-bind-dictionary.min.js.gz"></script>
+    <script src="js/knockout-3.5.0.min.js.gz"></script>
+    <script src="js/lock-11.20.3.min.js.gz"></script>
+    <script src="js/js.cookie-2.2.0.min.js.gz"></script>
+    <script src="js/moment-2.24.0.min.js.gz"></script>
+    <script src="js/FileSaver-2.0.2.min.js.gz"></script>
+    <script src="js/rna-1.0.min.js.gz"></script>
+
+    <script>
+      <!-- handle main panel toggle event -->
+      $("#rna-sidebar-toggle").mouseup(function(e) {
+        	e.preventDefault();
+        	$("#rna-wrapper").toggleClass("toggled");
+      });
+      <!-- load up HTML content stored in separate files -->
+      $(function(){
+        	$("#aboutContent").load("about.html");
+		$("#statsButtonSVG").load("stats.svg");
+		$("#statsModalSVG").load("stats.svg");
+      });
+    </script>
+
+    <script type="text/javascript" id="cookiebanner" src="https://cdnjs.cloudflare.com/ajax/libs/cookie-banner/1.2.2/cookiebanner.min.js"></script>
+
+  </body>
+
+</html>

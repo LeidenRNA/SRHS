@@ -1,0 +1,471 @@
+<div class="card">
+  <div class="card-body" id="aboutCardBody">
+    <div class="tab-content" id="aboutTabContent">
+
+      <div class="tab-pane fade show active" id="aboutTab" role="tabpanel" aria-labelledby="aboutTabLink">
+        <div class="container text-justify">
+          <p>This tool is a topology-based RNA genomic search tool, designed with the intent to be applied to functional non-coding RNAs in Flavivirus genomes</p>
+
+          <p>In contrast to some alternative search methods based on probabilistic or other techniques, the approach adopted by this tool allows for curated, variable structural descriptors (here referred to as <em>Consensus Secondary Structure Descriptors</em>, or <em>CSSDs</em>) &nbsp;-&nbsp; designed on the basis of a selection of homologous sequences, and involving both secondary and tertiary structural elements &nbsp;-&nbsp; to be used as queries against RNA sequence segments</p>
+
+          <p>CSSDs may include pseudoknots and triple base-base interactions in their definitions, and intrinsically allow for structural variability at given positions in the consensus, thus augmenting significantly the reach and generalization ability of the search mechanism</p>
+
+	  <p>The system provides the ability to execute queries using a set of curated CSSDs against a predefined, representative set of Flavivirus 3' untranslated regions (UTRs). The available CSSDs cover structural elements typically found and identified in literature, including those for Mosquito-borne, Tick-borne, and Insect-specific flaviviruses</p>
+	  
+	  <p>Registered users of the system can upload custom sequences and run queries against both the predefined and new sequence segments. Guest access to the system is provided to interested users, however any uploaded sequence data, and associated query results, will not persist across browser sessions</p>
+
+	  <p>For further information about this database refer to <em>Zammit A.</em>, <em>Helwerda L.</em>, <em>Olsthoorn R.C.L.</em>, <em>Verbeek F.</em>, and <em>Gultyaev A.P.</em>, <em>A database of flavivirus RNA structures with a search algorithm for pseudoknots and triple base-base interactions</em> (pending review)</p> 
+	  <p>Contact details: <a href="mailto:a.p.goultiaev@liacs.leidenuniv.nl">Dr. Alexandre P. Gultyaev</a>, <a href="mailto:a.zammit@liacs.leidenuniv.nl">Alan Zammit</a></p>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="sequencesTab" role="tabpanel" aria-labelledby="sequencesTabLink">
+        <div class="container text-center">
+            <h2 data-config-id="header">Sequences</h2>
+            <div id="sequencesCarousel" data-ride="carousel" data-interval="false" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <h5>Definition and Usage</h5>
+                      <div class="aboutCarouselContent">
+                        <p>Sequences are characterised by four attributes:</p>
+                        <ul>
+                          <li><b>Definition</b><br>A textual descriptor that describes the sequence segment</li>
+                          <li><b>Accession</b><br>An accession number, typically used when the sequence is derived from a 3rd party database, for cross-reference purposes</li>
+                          <li><b>Group</b><br>An arbitrary identifier that groups related sequences, used for easy selection of such sequences</li>
+			  <li><b>Nucleotide Sequence</b><br>The nucleic acid string of characters that defines the RNA sequence, using the characters <b>g</b>, <b>u</b>, <b>a</b>, and <b>c</b></li>
+                        </ul>
+			<p>When inputting new sequences, all four attributes are required. Moreover, all attributes of user-defined sequences must be unique except for <b>Group</b>. Sequences entered by registered users persist across different browser sessions</p>
+			<p>The tool comes packaged with 93 Flavivirus 3'UTR sequences. Each of these is tagged with a group name in accordance with the sequence's phylogenetic relationship to the Flavivirus genus, using the following initialisms:</p>
+                        <p><b>cISFV</b> (classic Insect-Specific Flaviruses), <b>ISV</b> (Insect-Specific Viruses), <b>MBFV</b> (Mosquito-Borne Flaviviruses), <b>NKV</b> (No-Known Vector flaviviruses), <b>TBFV</b> (Tick-Borne flaviviruses), or <b>UNCLASSIFIED</b></p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <h5>Accessing the User Interface</h5>
+                      <div class="aboutCarouselContent">
+		        <h6>Selecting Sequences</h6>
+                        <p>One or more sequences can be de/selected by either single-clicking on a given sequence's <b>Definition</b> entry, or by using the <em>Sequences</em> tab's 
+			<svg class="inline-feather" width="20" height="20" viewBox="0 0 24 24">
+                                <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"></path>
+                                <path d="M13 13l6 6"></path>
+                        </svg>
+			<b>Select</b> drop-down menu</p>
+                        <p>The currently selected number of sequences is shown next to the drop-down menu. This menu allows the user to select all sequences (<em>All</em>), deselect all (<em>None</em>), choose from one of the currently defined <b>Group</b>s, or select by search keywords (<em>By search</em>)<p> 
+			<p>Keyword search is case-insensitive, and performs a search across all four sequence attributes</p>
+                        <p>&nbsp;</p>
+                        <h6>Sequence Addition and Deletion</h6>
+                        <p>New sequences can be added and (only user-defined) sequences may be removed, using the 
+			<svg class="inline-feather" width="18" height="18" viewBox="0 0 24 24">
+                                <line x1="12" y1="2" x2="12" y2="6"></line>
+                                <line x1="12" y1="18" x2="12" y2="22"></line>
+                                <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line>
+                                <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line>
+                                <line x1="2" y1="12" x2="6" y2="12"></line>
+                                <line x1="18" y1="12" x2="22" y2="12"></line><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line>
+                        </svg>
+			<b>New</b> and 
+			<svg class="inline-feather" width="18" height="18" viewBox="0 0 24 24">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="9" y1="9" x2="15" y2="15"></line>
+                                <line x1="15" y1="9" x2="9" y2="15"></line>
+                        </svg>
+			<b>Delete</b> buttons respectively. When deleting sequences, if both user- and pre-defined sequences are selected, only the user-defined sequences are effectively removed. Note that associated jobs (and any resulting) hits will also be deleted</p>
+			<p>On entry of a new sequence, white space is automatically removed from the input string and any instances of <b>t</b> nucleotides are changed to <b>u</b></p>
+                      </div>
+                    </div>
+                </div>
+                <ul class="carousel-indicators">
+                    <li data-target="#sequencesCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#sequencesCarousel" data-slide-to="1"></li>
+                </ul>
+                <a href="#sequencesCarousel" role="button" data-slide="prev" class="carousel-control-prev justify-content-start">
+                  <img src="https://res.cloudinary.com/dnmq7rs4g/image/upload/v1555321691/icons/chevron-left.svg" aria-hidden="true" alt="" data-config-id="slider-left"/>
+                  <span class="sr-only">Previous</span></a><a href="#sequencesCarousel" role="button" data-slide="next" class="carousel-control-next justify-content-end">
+                  <img src="https://res.cloudinary.com/dnmq7rs4g/image/upload/v1555321682/icons/chevron-right.svg" aria-hidden="true" alt="" /><span class="sr-only">Next</span></a>
+            </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="CSSDsTab" role="tabpanel" aria-labelledby="CSSDsTabLink">
+        <div class="container text-center">
+            <h2 data-config-id="header">CSSDs</h2>
+            <div id="CSSDsCarousel" data-ride="carousel" data-interval="false" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <h5>Definition and User Interaction</h5>
+                      <div class="aboutCarouselContent">
+                        <p>CSSDs are represented by the following attributes:</p>
+                        <ul>
+                          <li><b>Name</b><br>A textual label that describes the CSSD<br>&nbsp;</li>
+                          <li><b>Consensus Secondary Structure Descriptor</b><br>A two-line text string that describes the variable RNA secondary structure, with the possibility of including pseudoknot and triple base interactions</li>
+                        </ul>
+                        <p>The tool includes descriptors that each represent a functional element known to be present in the 3' UTR of Flavivirus genomes. Currently, these descriptors target elements such as <b>Y-SL</b>, <b>GC-SL</b>, <b>AU-SL</b>, and <b>DB</b> (dumbbell) structures found in a variety of Flavivirus groups, including <b>cISFV</b>, <b>MBFV</b>, and <b>TBFV</b>. For more information on structure and sequence coverage refer to <em>Zammit A.</em>, <em>Helwerda L.</em>, <em>Olsthoorn R.C.L.</em>, <em>Verbeek F.</em>, and <em>Gultyaev A.P.</em>, <em>A database of flavivirus RNA structures with a search algorithm for pseudoknots and triple base-base interactions</em> (pending review)</p>
+                        <h6>Selecting CSSDs</h6>
+                        <p>One or more descriptors can be de/selected by single-clicking on a given sequence's <b>Name</b> entry, or using the <em>CSSDs</em> tab's 
+			<svg class="inline-feather" width="20" height="20" viewBox="0 0 24 24">
+                                <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"></path>
+                                <path d="M13 13l6 6"></path>
+                        </svg>
+			<b>Select</b> drop-down menu. The currently selected number of consensa is shown next to the drop-down menu. This menu allows the user to select all descriptors (<em>All</em>), deselect all (<em>None</em>), or select by search keywords (<em>By search</em>)</p>
+			<p>Keyword search is case-insensitive, and executes a search across both CSSD attributes</p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <h5>Descriptor Notation (Symbolic Representation)</h5>
+                      <div class="aboutCarouselContent">
+                        <p>The notation used in the first of the two-line CSSD descriptor follows closely the <em>Washington University Secondary Structure</em> (<em>WUSS</em>) notation for secondary structure, with modifications for supporting pseudoknot and triple base interactions. The following set of symbols comprise this first component of CSSD notaton:
+                          <ol>
+                            <li>Angled brackets (<b>&lt;&gt;</b>) represent base pairs of a terminal stem structure, whereas the parenthesis (<b>()</b>) are used for helices closing a multi-branched structure<br></br></li>
+                            <li>An underscore (<b>_</b>) denotes a hairpin loop residue<br></br></li>
+                            <li>Colons (<b>:</b>) represent consensus positions holding unstructured nucleotides<br></br></li>
+                            <li>Commas (<b>,</b>) symbolize unpaired nucleotides that occur in multi-branch loops<br></br></li>
+                            <li>A dash (<b>-</b>) is used for positions in a bulge or interior loop<br></br></li>
+                            <li>Pseudoknots are represented by matching curly brackets (<b>{}</b>) or square brackets (<b>[]</b>)<br></br></li>
+                            <li>Triple base-base interactions are formed by a matching base pair represented by tildes (<b>~</b>) and a third, full stop (<b>.</b>) symbol<br></br></li>
+                          </ol>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <h5>Descriptor Notation (Structural Variability)</h5>
+                      <div class="aboutCarouselContent">
+                        <p>The second, optional line in CSSD notation denotes structural (also referred to as, positional) variability in the RNA secondary/tertiary structure as represented by the first string</p>
+                        <p>By way of example, the number '<b>2</b>' positioned under a contiguous string of five angled brackets (denoting a terminal stem structure), signifies that the stem structure is allowed to vary between four and six in size. This simplistic scenario, shown below in CSSD notation, and if used in a search query, would match both sequences listed further below:
+                        <p><b>&lt;&lt;&lt;&lt;&lt;_____&gt;&gt;&gt;&gt;&gt;</b><br><b>2</b></p>
+                        <p>ggggaaaaacccc</p>
+                        <p>gggggaaaaaccccc</p>
+                        <p>Notationally, positional variables exceeding <b>9</b> in value are represted by alpha characters, starting with the letter <b>a</b> (thus denoting the value <b>10</b>)
+                      </div>
+                    </div>
+                </div>
+                <ul class="carousel-indicators">
+                    <li data-target="#CSSDsCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#CSSDsCarousel" data-slide-to="1"></li>
+                    <li data-target="#CSSDsCarousel" data-slide-to="2"></li>
+                </ul>
+                <a href="#CSSDsCarousel" role="button" data-slide="prev" class="carousel-control-prev justify-content-start">
+                  <img src="https://res.cloudinary.com/dnmq7rs4g/image/upload/v1555321691/icons/chevron-left.svg" aria-hidden="true" alt="" data-config-id="slider-left"/>
+                  <span class="sr-only">Previous</span></a><a href="#CSSDsCarousel" role="button" data-slide="next" class="carousel-control-next justify-content-end">
+                  <img src="https://res.cloudinary.com/dnmq7rs4g/image/upload/v1555321682/icons/chevron-right.svg" aria-hidden="true" alt="" /><span class="sr-only">Next</span></a>
+            </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="JobsTab" role="tabpanel" aria-labelledby="JobsTabLink">
+        <div class="container text-center">
+            <h2 data-config-id="header">Jobs and Hits</h2>
+            <div id="JobsCarousel" data-ride="carousel" data-interval="false" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <h5>Job Queue Definition and User Interaction</h5>
+                      <div class="aboutCarouselContent">
+			      <p>The tool's <b>Jobs/Hits</b> panel is split into two - the <em>Job Queue</em> tab on the left and the <em>Hits View</em> tab on the right. Queries can be submitted to the job queue, by first selecting one (or more) sequences, one (or more) CSSDs, and then running a search query. A job entry, one for each submitted sequence/CSSD combination, is characterized as follows:</p>
+                        <ul>
+                          <li><b>Time of Entry</b><br>Date and time when the job has been submitted to the queue</li>
+                        </ul>
+			<ul>
+			  <li><b>Sequence Definition</b><br>Textual descriptor of the queried sequence. Equivalent to the sequence <b>Definition</b> attribute</li>
+			</ul>
+			<ul>
+			  <li><b>CSSD Name</b><br>Textual descriptor of the CSSD against which the sequence is run. Equivalent to the CSSD <b>Name</b> attribute</li>
+			</ul>
+			<ul> 
+				<li><b>Status</b><br>
+					<p>Two visual indicators provide current information on the execution status. The first denotes query status in the job queue (
+					<svg class="inline-feather" width="18" height="18" viewBox="0 0 24 24">
+                                        	<rect x="6" y="4" width="4" height="16"></rect>
+                                                <rect x="14" y="4" width="4" height="16"></rect>
+                                        </svg>
+					<em>waiting to start</em>, 
+					<svg class="inline-feather" width="18" height="18" viewBox="0 0 24 24">
+                                                <polygon points="13 19 22 12 13 5 13 19"></polygon>
+                                                <polygon points="2 19 11 12 2 5 2 19"></polygon>
+                                        </svg>
+					<em>in progress</em>, and 
+					<svg class="inline-feather" width="18" height="18" viewBox="0 0 24 24">
+                                                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline>
+                                                <polyline points="2 12 12 17 22 12"></polyline>
+                                        </svg>
+					<em>complete</em>&nbsp;). On completion, this icon shows on mouse-hover the total number of hits returned. If no hits are returned, a designated 
+					<svg class="inline-feather" width="18" height="18" viewBox="0 0 24 24">
+                                                <rect x="4" y="4" width="16" height="17" rx="2" ry="2"></rect>
+                                        </svg>
+					icon is displayed</p>
+
+					<p>While a query's work is in progress, a second icon provides the number of hits currently yielded. Once a job has started, this 
+					<svg class="inline-feather" width="18" height="18" viewBox="0 0 24 24">
+						<circle cx="12" cy="12" r="5"></circle>
+						<line x1="12" y1="1" x2="12" y2="3"></line>
+						<line x1="12" y1="21" x2="12" y2="23"></line>
+						<line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+						<line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+						<line x1="1" y1="12" x2="3" y2="12"></line>
+						<line x1="21" y1="12" x2="23" y2="12"></line>
+						<line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+						<line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                        </svg>
+					icon provides an indication of computational resources (total time) committed to this query. If a query exceeds resources (CPU time/memory) available to it, a visual 
+					<svg class="inline-feather" width="18" height="18" viewBox="0 0 24 24" style="stroke: brown">
+						<path d="M19 16.9A5 5 0 0 0 18 7h-1.26a8 8 0 1 0-11.62 9"></path>
+						<polyline points="13 11 9 17 15 17 11 23"></polyline>
+					</svg>
+					indication is provided, highlighting the effective number of hits retrieved. Clicking on this indicator re-submits the job to the queue</p>
+				</li>
+			</ul>
+                      </div>
+                    </div>
+			<div class="carousel-item">
+			      <h5>Accessing the Job Queue User Interface</h5>
+			      <div class="aboutCarouselContent">
+				<h6>Selecting Jobs</h6>
+				<p>Individual job entries, and any associated hits, can be browsed using cursor key navigation. The currently viewed job entry (and current hit, if any are available) is highlighted by a marquee box</p>
+				<p>One or more jobs can be de/selected for deletion by either single-clicking on a given job's <b>Time of Entry</b> entry, or by using the <em>Job Queue</em> tab's 
+				<svg class="inline-feather" width="20" height="20" viewBox="0 0 24 24">
+                                	<path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"></path>
+                                	<path d="M13 13l6 6"></path>
+                        	</svg>
+				<b>Select</b> drop-down menu</p>
+				<p>The currently selected number of jobs is shown next to the drop-down menu. This menu allows the user to select all jobs (<em>All</em>), deselect all (<em>None</em>), or select by search keywords (<em>By search</em>)<p>
+				<p>Keyword search is case-insensitive, and performs a search across all job attributes</p><br>
+				<h6>Job Deletion</h6>
+				<p>One of more selected jobs can be deleted from the queue using the 
+				<svg class="inline-feather" width="18" height="18" viewBox="0 0 24 24">
+                                	<rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                	<line x1="9" y1="9" x2="15" y2="15"></line>
+                                	<line x1="15" y1="9" x2="9" y2="15"></line>
+                        	</svg>
+				<b>Delete</b> button. When deleting a job, any associated hits are also purged</p><br>
+                                <h6>Saving Jobs/Hits Data</h6>
+                                <p>Hit data for one of more selected jobs can be retrieved using the
+                                <svg class="inline-feather" width="18" height="18" viewBox="0 0 24 24">
+					<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+					<polyline points="7 10 12 15 17 10"></polyline>
+					<line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                                <b>Save</b> button. A text file with all selected Jobs/Hits, listed sequentially, will be downloaded from the user's browser</p>
+			      </div>
+			</div>
+                    <div class="carousel-item">
+                      <h5>Hits View Definition and User Interaction</h5>
+                      <div class="aboutCarouselContent">
+			<p>The <em>Hits View</em> tab on the right displays any results retrieved for the current job entry</p>
+                        <ul>
+			  <li><b>Position</b><br>The nucleotide location along the sequence at which the CSSD matched, indexed from position 1</li>
+                        </ul>
+			<ul>
+			  <li><b>Free Energy</b><br>Free Energy estimate, in <em>kcal/mol</em>, for this specific sequence/consensus combination. Refer to <em>Zammit A.</em>, <em>Helwerda L.</em>, <em>Olsthoorn R.C.L.</em>, <em>Verbeek F.</em>, and <em>Gultyaev A.P.</em>, <em>A database of flavivirus RNA structures with a search algorithm for pseudoknots and triple base-base interactions</em> (pending review) for further details about this estimate</li>
+			</ul>
+			<ul>
+			  <li><b>Hit</b><br>A string representation, in CSSD notation, for this consensus match</li>
+			</ul>
+			<h6>Reviewing the Current Hit</h6>
+			<p>Depending on the number of hits yielded, batches of hits may be grouped into <em>pages</em> (by default, of 10) for easy navigation. Moreover, hits may be <em>ordered</em> by <b>Position</b> or <b>Free Energy</b> (the default)</p>
+			
+			<p>Both hit order and page size can be changed using the 
+			<svg class="inline-feather" width="18" height="18" viewBox="0 0 24 24">
+				<line x1="12" y1="19" x2="12" y2="5"></line>
+				<polyline points="5 12 12 5 19 12"></polyline>
+			</svg>
+			<b>Order by</b> and 
+			<svg class="inline-feather" width="18" height="18" viewBox="0 0 24 24">
+				<path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+				<path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+			</svg>
+			<b>Show</b> drop-down menus, respectively</p>
+
+			<p>At the bottom of the <b>Jobs/Hits</b> panel, the <em>current available hit</em> is displayed, as the user navigates through the <em>Job Queue</em> and <em>Hits View</em> tabs. The matching sequence segment and consensus are shown overlaid, with the total number of hits and current hit page shown on the right</p>
+                      </div>
+                    </div>
+
+                    <div class="carousel-item">
+                      <h5>Job/Hits Statistics</h5>
+                      <div class="aboutCarouselContent">
+			      <p>When a search yields one or more hits for the currently viewed job (highlighted by a marquee box), hit statistics are made available for viewing. The <em>View Job/Hits stats</em> button at the bottom of the panel, located to the left of the <em>current available hit</em>, provides access to a rudimentary point-and-click interface, displaying summary statistics. For each position in the query sequence where at least one hit was retrieved, the following data is available:</p>
+                        <ul>
+			  <li><b>count</b><br>Total hit count at this position</li>
+                        </ul>
+                        <ul>
+			  <li><b>min</b><br>Minimum stacking free energy</li>
+                        </ul>
+                        <ul>
+			  <li><b>avg</b><br>Mean stacking free energy</li>
+                        </ul>
+                        <ul>
+			  <li><b>max</b><br>Max stacking free energy</li>
+                        </ul>
+                        <ul>
+			  <li><b>std</b><br>Sample standard deviation for stacking free energy</li>
+                        </ul>
+			<p>At each position with at least one hit, a vertical line is shown spanning the <em>min</em>, <em>avg</em>, and <em>max</em> free energy points. Clicking on a point updates the <em>current available hit</em> view accordingly. (Note that clicking on <em>avg</em> recruits the closest matching hit.)</p>
+                      </div>
+                    </div>
+		</div>
+
+                <ul class="carousel-indicators">
+                    <li data-target="#JobsCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#JobsCarousel" data-slide-to="1"></li>
+		    <li data-target="#JobsCarousel" data-slide-to="2"></li>
+		    <li data-target="#JobsCarousel" data-slide-to="3"></li>
+                </ul>
+
+                <a href="#JobsCarousel" role="button" data-slide="prev" class="carousel-control-prev justify-content-start">
+                  <img src="https://res.cloudinary.com/dnmq7rs4g/image/upload/v1555321691/icons/chevron-left.svg" aria-hidden="true" alt="" data-config-id="slider-left"/>
+                  <span class="sr-only">Previous</span></a><a href="#JobsCarousel" role="button" data-slide="next" class="carousel-control-next justify-content-end">
+                  <img src="https://res.cloudinary.com/dnmq7rs4g/image/upload/v1555321682/icons/chevron-right.svg" aria-hidden="true" alt="" /><span class="sr-only">Next</span></a>
+            </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="UserInterfaceTab" role="tabpanel" aria-labelledby="UserInterfaceTabLink">
+        <div class="container text-center">
+            <h2 data-config-id="header">User Interface</h2>
+            <div id="UserInterfaceCarousel" data-ride="carousel" data-interval="false" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <h5>Main Menu Panel</h5>
+                      <div class="aboutCarouselContent">
+			<h6>User Login and Query Workflow</h6>
+			<p>By default, a new user logs into the system as a guest. The <em>Access Profile</em> tab, in the <b>Main Menu</b> panel, allows a user to 
+                        <svg class="inline-feather" width="20" height="20" viewBox="0 0 24 24">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+			<b>register a new profile</b>, 
+			<svg class="inline-feather" id="accessProfileLoginIcon" width="20" height="20" viewBox="0 0 24 24">
+                                <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
+                                <line x1="12" y1="2" x2="12" y2="12"></line>
+                        </svg>
+			<b>login with your profile</b>, or once logged in, 
+                        <svg class="inline-feather" id="accessProfileGuestIcon" width="20" height="20" viewBox="0 0 24 24">
+                                <polygon points="5 4 15 12 5 20 5 4"></polygon>
+                                <line x1="19" y1="5" x2="19" y2="19"></line>
+                        </svg>
+			<b>switch to guest profile</b></p>
+
+			<p>Clicking on the 
+			<svg class="inline-feather" width="20" height="20" viewBox="0 0 24 24">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+			<b>register a new profile</b> button launches a profile popup that allows the current user to register a new profile, using either a valid email address, or by signing up with Google. New users are invited to agree with the <em>Terms of Service</em> prior to profile creation</p>
+
+			<p>Three menu buttons, 
+	                  	<svg class="inline-feather" width="20" height="20" viewBox="0 0 24 24">
+                          		<line x1="17" y1="10" x2="3" y2="10"></line>
+                          		<line x1="21" y1="6" x2="3" y2="6"></line>
+                          		<line x1="21" y1="14" x2="3" y2="14"></line>
+                          		<line x1="17" y1="18" x2="3" y2="18"></line>
+                  		</svg>
+			<em>Select Sequences</em>, 
+                  		<svg class="inline-feather" width="20" height="20" viewBox="0 0 24 24">
+                          		<path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3
+-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path>
+                  		</svg>
+			<em>Choose CSSDs</em>, and 
+                  		<svg class="inline-feather" width="20" height="20" viewBox="0 0 24 24">
+                          		<polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                          		<polyline points="2 17 12 22 22 17"></polyline>
+                          		<polyline points="2 12 12 17 22 12"></polyline>
+                  		</svg>
+				<em>View Jobs/Hits</em>, toggle the <b>Sequence</b>, <b>CSSD</b>, and <b>Job/Hits</b> panels, respectively, to allow for maximal viewing of the appropriate work panel</p>
+
+			<p> 	<svg class="inline-feather" width="20" height="20" viewBox="0 0 24 24">
+                          		<polyline points="12 18 18 12 12 6"></polyline>
+                          		<polyline points="3 18 9 12 3 6"></polyline>
+                  		</svg>
+			<em>Run Search</em> places a new job into the <em>Job Queue</em>, once one or more sequences and CSSDs have been selected</p>
+
+			<br>
+
+                        <h6>Monitoring Compute Resources</h6>
+			<p>The tool makes intensive use of compute resources to service user queries. The <em>Compute Resources</em> tab provides a snapshot of the current connection quality with our server resources. The first icon
+			<svg class="inline-feather" id="computeResourcesConnection" width="20" height="20" viewBox="0 0 24 24">
+                        	<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+			highlights whether a server connection is up or not. The second 
+			<svg class="inline-feather" id="computeResourcesComms" width="20" height="20" viewBox="0 0 24 24">
+                        	<circle cx="12" cy="12" r="2"></circle>
+                                <path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"></path>
+                        </svg>
+			gives indication whenever data transfer to and from the tool's servers occurs, and the last icon 
+			<svg class="inline-feather" id="computeResourcesFail" width="20" height="20" viewBox="0 0 24 24">
+                                <path d="M23 12a11.05 11.05 0 0 0-22 0zm-5 7a3 3 0 0 1-6 0v-7"></path>
+                        </svg>
+			alerts the user if compute resources are currently unavailable</p>
+			<p>Clicking on <em>Compute Resources</em> shows a log of recent connection activity. The first icon
+			<svg class="inline-feather" id="computeResourcesFail" width="20" height="20" viewBox="0 0 24 24">
+				<path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+			</svg>
+			at the bottom left resets the server connection, and the second
+			<svg class="inline-feather" id="computeResourcesFail" width="20" height="20" viewBox="0 0 24 24">
+				<polyline points="4 17 10 11 4 5"></polyline>
+				<line x1="12" y1="19" x2="20" y2="19"></line>
+			</svg>
+			clears the current log</p>
+                      </div>
+                    </div>
+		    <div class="carousel-item">
+                      <h5>General Navigation</h5>
+                      <div class="aboutCarouselContent">
+                        <p>The following keys and shortcut keys can be used to navigate the tool's panels:</p>
+                        <ul>
+                          <li><b>Arrow Up</b><br>browse previous job entry</li>
+                          <li><b>Arrow Down</b><br>browse next job entry</li>
+                          <li><b>Arrow Left</b><br>browse previous hit</li>
+                          <li><b>Arrow Right</b><br>browse next hit</li>
+                          <li><b>Page Up</b><br>go to previous hit page</li>
+                          <li><b>Page Down</b><br>go to next hit page</li>
+                          <li><b>Alt s</b><br>search sequence list</li>
+                          <li><b>Alt c</b><br>search CSSD list</li>
+                          <li><b>Alt j</b><br>search job queue entries</li>
+                        </ul>
+                      </div>
+                    </div>
+                </div>
+                <ul class="carousel-indicators">
+                    <li data-target="#UserInterfaceCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#UserInterfaceCarousel" data-slide-to="1"></li>
+                </ul>
+                <a href="#UserInterfaceCarousel" role="button" data-slide="prev" class="carousel-control-prev justify-content-start">
+                  <img src="https://res.cloudinary.com/dnmq7rs4g/image/upload/v1555321691/icons/chevron-left.svg" aria-hidden="true" alt="" data-config-id="slider-left"/>
+                  <span class="sr-only">Previous</span></a><a href="#UserInterfaceCarousel" role="button" data-slide="next" class="carousel-control-next justify-content-end">
+                  <img src="https://res.cloudinary.com/dnmq7rs4g/image/upload/v1555321682/icons/chevron-right.svg" aria-hidden="true" alt="" /><span class="sr-only">Next</span></a>
+            </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="TermsTab" role="tabpanel" aria-labelledby="TermsTabLink">
+              <div class="container">
+		  <embed src="TOS.txt" style="width: 100%; height: 50%;"></embed>
+		  <embed src="PrivacyPolicy.txt" style="width: 100%; height: 50%;"></embed>
+              </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card-footer">
+    <ul class="nav nav-pills"  id="aboutTabList" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="aboutTabLink" data-toggle="tab" href="#aboutTab" role="tab" aria-controls="About" aria-selected="true">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="sequencesTabLink" data-toggle="tab" href="#sequencesTab" role="tab" aria-controls="Sequences" aria-selected="false">Sequences</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="CSSDsTabLink" data-toggle="tab" href="#CSSDsTab" role="tab" aria-controls="CSSDs" aria-selected="false">CSSDs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="JobsTabLink" data-toggle="tab" href="#JobsTab" role="tab" aria-controls="Jobs" aria-selected="false">Jobs and Hits</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="UserInterfaceTabLink" data-toggle="tab" href="#UserInterfaceTab" role="tab" aria-controls="User Interface" aria-selected="false">User Interface</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="TermsTabLink" data-toggle="tab" href="#TermsTab" role="tab" aria-controls="Terms" aria-selected="false">Terms of Service and Privacy Policy</a>
+      </li>
+    </ul>
+  </div>
+</div>

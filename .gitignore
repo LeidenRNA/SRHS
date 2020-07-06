@@ -1,0 +1,5 @@
+*.o
+*.log
+ompi-server.uri
+backups
+rna
